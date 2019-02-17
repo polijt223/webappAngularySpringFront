@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+.hbuttonWarning:hover {
+    background-color: #ffe601;
+    color: black;
+  }
+.hbuttonDanger:hover {
+  background-color: #f10808;
+  color: white;
+}
+.hbuttonPrimary:hover {
+  background-color: #0463f1;
+  color: white;
+}
+.hbuttonDark:hover {
+  background-color: #000000;
+  color: white;
+}
+
+#dropdowncolor1:hover{background-color: #ffe601; color: black;}
+#dropdowncolor2:hover{background-color: #f10808; color: white;}
+#dropdowncolor3:hover{background-color: #0463f1; color: white;}
+#dropdowncolor4:hover{background-color: #000000; color: white;}
+
+#blocktext{
+  background-color:rgba(97, 97, 97, 0.452);
+  margin-bottom: 10%;
+}
+

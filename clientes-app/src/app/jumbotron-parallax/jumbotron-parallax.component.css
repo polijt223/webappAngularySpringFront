@@ -1,0 +1,11 @@
+#bloque121 {
+    background-image: url("../../assets/imagenes/tw1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }
