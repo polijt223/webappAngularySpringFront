@@ -1,6 +1,6 @@
 <nav id="navth" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class=" navbar-brand" href="#carouselId">
-     <img src="../../assets/imagenes/twico.png" alt=""> Inicio
+  <a class=" navbar-brand text-white">
+     <img src="../../assets/imagenes/twico.png" alt=""> TW3
   </a>
 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -8,19 +8,22 @@
 </button>
 <div class="collapse navbar-collapse" id="collapsibleNavId">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item ">
-            <a class="nav-link " href="#articulos">Articulos <span class="sr-only">(current)</span></a>
+        
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home">Inicio</a>
         </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="#imagenC">Acordeon <span class="sr-only">(current)</span></a>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/clientes">Clientes</a>
         </li>
+        
+        
         <li class="nav-item dropdown">
-            <a class=" nav-link  dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <a class=" nav-link  dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cambiar Thema</a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a id="dropdowncolor1" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor1')" href="#">Amarillo</a>
-                <a id="dropdowncolor2" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor2')" href="#">rojo</a>
-                <a id="dropdowncolor3" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor3')" href="#">azul</a>
-                <a id="dropdowncolor4" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor4')" href="#">negro</a>
+                <a id="dropdowncolor1" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor1')" >Amarillo</a>
+                <a id="dropdowncolor2" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor2')" >rojo</a>
+                <a id="dropdowncolor3" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor3')" >azul</a>
+                <a id="dropdowncolor4" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor4')" >negro</a>
             </div>
         </li>
     </ul>
