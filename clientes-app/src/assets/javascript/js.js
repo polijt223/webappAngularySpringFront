@@ -1,3 +1,6 @@
+
+
+
 function cambiarimagen1(x){
     
     var n = x.getAttribute("class");
@@ -91,18 +94,44 @@ function cambiartema(texto){
     navth.setAttribute("class","navbar navbar-expand-sm navbar-dark bg-"+color+" fixed-top ");
     btnf1.setAttribute("class","btn btn-outline-light my-2 my-sm-0");
 
-    card1h.setAttribute("onmouseover","maszoom(card1h)");
-    card1h.setAttribute("onmouseout","menoszoom(card1h)");
-    card1h.setAttribute("class","card  border border-"+color+"");
-    cardTitle1.setAttribute("class","card-title text-"+color+"");
-    card2h.setAttribute("onmouseover","maszoom(card2h)");
-    card2h.setAttribute("onmouseout","menoszoom(card2h)");
-    card2h.setAttribute("class","card  border border-"+color+"");
-    cardTitle2.setAttribute("class","card-title text-"+color+"");
-    card3h.setAttribute("onmouseover","maszoom(card3h)");
-    card3h.setAttribute("onmouseout","menoszoom(card3h)");
-    card3h.setAttribute("class","card  border border-"+color+"");
-    cardTitle3.setAttribute("class","card-title text-"+color+"");
+    var card1Prueba = document.getElementById("card1h");
+
+    if (isInPage(card1Prueba)) {
+        card1h.setAttribute("onmouseover","maszoom(card1h)");
+        card1h.setAttribute("onmouseout","menoszoom(card1h)");
+        card1h.setAttribute("class","card  border border-"+color+"");
+        cardTitle1.setAttribute("class","card-title text-"+color+"");
+        card2h.setAttribute("onmouseover","maszoom(card2h)");
+        card2h.setAttribute("onmouseout","menoszoom(card2h)");
+        card2h.setAttribute("class","card  border border-"+color+"");
+        cardTitle2.setAttribute("class","card-title text-"+color+"");
+        card3h.setAttribute("onmouseover","maszoom(card3h)");
+        card3h.setAttribute("onmouseout","menoszoom(card3h)");
+        card3h.setAttribute("class","card  border border-"+color+"");
+        cardTitle3.setAttribute("class","card-title text-"+color+"");
+    }
+        
+    var listCss = document.getElementById("listClientesCSS");
+    
+    if (isInPage(listCss)) {
+        cardListaUsuariosPrincipal.setAttribute("class","card border-"+color+" mb-3");
+        cardListaUsuariosBody.setAttribute("class","card-body text-light bg-"+color);
+        btnListaUsuariosCrear.setAttribute("class","btn btn-rounded btn-"+color+" border-success");
+        tbodyListaUsuariosDatos.setAttribute("class","bg-white text-"+color);
+    }
+    
+    var formCSS = document.getElementById("cardFormClienteNew");
+    
+    if (isInPage(formCSS)) {
+        cardFormClienteNew.setAttribute("class","card bg-"+color+" text-white border-success");
+        btnFormClienteNew.setAttribute("class","btn text-white bg-"+color+" border-success");
+    }
+    
+        
+    
+
+    
+
 
     if (color.localeCompare("dark")==0) {
         d3text.setAttribute("class","display-3 text-light");
@@ -130,6 +159,37 @@ function cambiartema(texto){
     headingThree.setAttribute("class","card-header bg-"+color+"");
     acordeonBtn3.setAttribute("class","btn btn-"+color+" collapsed");
 
+}
+
+let colorHidden = "";
+
+function conservartema(){
+
+    colorHidden = elementohidden2.getAttribute("class");
+    console.log(colorHidden);
+
+    if(colorHidden.localeCompare("warning")==0){
+        colorHidden="dropdowncolor1";
+        console.log(colorHidden);
+    }
+    if(colorHidden.localeCompare("danger")==0){
+        colorHidden="dropdowncolor2";
+        console.log(colorHidden);
+    }
+    if(colorHidden.localeCompare("primary")==0){
+        colorHidden="dropdowncolor3";
+        console.log(colorHidden);
+    }
+    if(colorHidden.localeCompare("dark")==0){
+        colorHidden="dropdowncolor4";
+        console.log(colorHidden);
+    }
+    
+    setTimeout ('cambiartema(colorHidden);', 50); 
+}
+
+function isInPage(node) {
+    return (node === document.body) ? false : document.body.contains(node);
 }
 
 
