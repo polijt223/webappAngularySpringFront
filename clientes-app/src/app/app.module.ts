@@ -14,11 +14,13 @@ import { RouterModule, Routes} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ClienteService } from './clientes/cliente.service';
 import { HttpClientModule} from '@angular/common/http';
-
+import { FormComponent } from './clientes/form.component';
 
 const routes: Routes =  [
   {path:'',redirectTo:'/home', pathMatch:'full'},
   {path:'clientes', component:ClientesComponent},
+  {path:'clientes/form', component:FormComponent},
+  {path:'clientes/form/:id', component:FormComponent},
   {path:'home', component:CarouselComponent}
 ]
 
@@ -31,7 +33,8 @@ const routes: Routes =  [
     JumbotronParallaxComponent,
     ArticulosComponent,
     AcordeonBotoneraComponent,
-    ClientesComponent
+    ClientesComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
