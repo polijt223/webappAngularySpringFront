@@ -6,7 +6,8 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
-  templateUrl: './form.component.html'
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
 
@@ -15,6 +16,7 @@ export class FormComponent implements OnInit {
   constructor(private clienteService: ClienteService,
   private router:Router,
   private activateRoute: ActivatedRoute) { }
+  private errores: string[];
 
   ngOnInit() {
     this.cargarCliente()
@@ -32,29 +34,29 @@ export class FormComponent implements OnInit {
   create(): void{
     this.clienteService.create(this.cliente)
     .subscribe( cliente => {
-      this.router.navigate(['/clientes'])
-      Swal.fire({
-        title: 'Cliente Guardado',
-        text: `El Cliente ${cliente.nombre} se guardo correctamente`,
-        type: 'success',
-        confirmButtonText: 'Aceptar'
-      })
+      this.router.navigate(['/clientes']);
+      Swal.fire({title: 'Cliente Guardado',text: `El Cliente ${cliente.nombre} se guardo correctamente`,type: 'success',confirmButtonText: 'Aceptar' });
+    },
+    err => {
+      this.errores = err.error.errors as string[];
+      console.error('Código de error desde el backend: ' + err.status);
+      console.error(err.error.errors);
     }
     );
   }
 
   update():void{
     this.clienteService.update(this.cliente)
-    .subscribe(cliente=>{
+    .subscribe(json=>{
         this.router.navigate(['/clientes'])
-        Swal.fire({
-          title: 'Cliente Modificado',
-          text: `El Cliente ${cliente.nombre} se actualizo correctamente`,
-          type: 'success',
-          confirmButtonText: 'Aceptar'
-        })
-    }
-  )
+        Swal.fire({title: 'Cliente Modificado',text: `${json.mensaje} : ${json.cliente.nombre}`,type: 'success',confirmButtonText: 'Aceptar'});
+    },
+    err => {
+      this.errores = err.error.errors as string[];
+      console.error('Código de error desde el backend: ' + err.status);
+      console.error(err.error.errors);
+      }
+    );
   }
 
 }

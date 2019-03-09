@@ -70,22 +70,18 @@ function cambiartema(texto){
     var colorC;
 
     if(texto.localeCompare("dropdowncolor1")==0){
-        console.log("Warning");
         color = "warning";
         colorC = "Warning";
     }
     if(texto.localeCompare("dropdowncolor2")==0){
-        console.log("Danger");
         color = "danger";
         colorC = "Danger";
     }
     if(texto.localeCompare("dropdowncolor3")==0){
-        console.log("Primary");
         color = "primary";
         colorC = "Primary";
     }
     if(texto.localeCompare("dropdowncolor4")==0){
-        console.log("Dark");
         color = "dark";
         colorC = "Dark";
     }
@@ -95,7 +91,6 @@ function cambiartema(texto){
     btnf1.setAttribute("class","btn btn-outline-light my-2 my-sm-0");
 
     var card1Prueba = document.getElementById("card1h");
-
     if (isInPage(card1Prueba)) {
         card1h.setAttribute("onmouseover","maszoom(card1h)");
         card1h.setAttribute("onmouseout","menoszoom(card1h)");
@@ -112,7 +107,6 @@ function cambiartema(texto){
     }
         
     var listCss = document.getElementById("listClientesCSS");
-    
     if (isInPage(listCss)) {
         cardListaUsuariosPrincipal.setAttribute("class","card border-"+color+" mb-3");
         cardListaUsuariosBody.setAttribute("class","card-body text-light bg-"+color);
@@ -121,17 +115,10 @@ function cambiartema(texto){
     }
     
     var formCSS = document.getElementById("cardFormClienteNew");
-    
     if (isInPage(formCSS)) {
         cardFormClienteNew.setAttribute("class","card bg-"+color+" text-white border-success");
         btnFormClienteNew.setAttribute("class","btn text-white bg-"+color+" border-success");
     }
-    
-        
-    
-
-    
-
 
     if (color.localeCompare("dark")==0) {
         d3text.setAttribute("class","display-3 text-light");
@@ -162,30 +149,24 @@ function cambiartema(texto){
 }
 
 let colorHidden = "";
-
 function conservartema(){
 
     colorHidden = elementohidden2.getAttribute("class");
-    console.log(colorHidden);
 
     if(colorHidden.localeCompare("warning")==0){
         colorHidden="dropdowncolor1";
-        console.log(colorHidden);
     }
     if(colorHidden.localeCompare("danger")==0){
         colorHidden="dropdowncolor2";
-        console.log(colorHidden);
     }
     if(colorHidden.localeCompare("primary")==0){
         colorHidden="dropdowncolor3";
-        console.log(colorHidden);
     }
     if(colorHidden.localeCompare("dark")==0){
         colorHidden="dropdowncolor4";
-        console.log(colorHidden);
     }
     
-    setTimeout ('cambiartema(colorHidden);', 50); 
+    setTimeout ('cambiartema(colorHidden);', 150); 
 }
 
 function isInPage(node) {

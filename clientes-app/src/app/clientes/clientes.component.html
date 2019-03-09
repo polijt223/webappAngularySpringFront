@@ -1,6 +1,12 @@
 <br>
 <br>
+
+
+
 <div id="listClientesCSS" class="container mt-5">
+
+  <detalle-cliente *ngIf="clienteSeleccionado" [cliente]="clienteSeleccionado" ></detalle-cliente>
+
   <div id="cardListaUsuariosPrincipal" class="card border-dark mb-3">
     <div id="cardListaUsuariosBody" class="card-body text-light bg-dark">
       <h5 class="card-title">Listado de clientes</h5>
@@ -11,7 +17,7 @@
       <table class="table table-bordered table-hover table-responsive-md">
         <thead>
           <tr>
-            <th>id</th>
+            <th>Perfil</th>
             <th>nombre</th>
             <th>apellido</th>
             <th>email</th>
@@ -22,11 +28,16 @@
         </thead>
         <tbody id="tbodyListaUsuariosDatos" class="bg-white text-dark">
           <tr *ngFor="let cliente of clientes">
-            <td>{{ cliente.id }}</td>
+            <td>
+                <img *ngIf="cliente?.foto" (click)="abrirModal(cliente)" src="http://localhost:7075/api/uploads/img/{{cliente.foto}}"
+                 style="width: 100px; height:64px; cursor: pointer;"  alt="{{cliente.foto}}" class="img-thumbnail rounded">
+                <img *ngIf="!cliente?.foto" (click)="abrirModal(cliente)" src="http://localhost:7075/images/no-user.png"
+                style="width: 100px; height:64px; cursor: pointer;"  alt="{{cliente.foto}}" class="img-thumbnail rounded">
+            </td>
             <td>{{ cliente.nombre }}</td>
-            <td>{{ cliente.apellido }}</td>
+            <td>{{ cliente.apellido | uppercase }}</td>
             <td>{{ cliente.email }}</td>
-            <td>{{ cliente.createAt }}</td>
+            <td>{{ cliente.createAt | date:'EEEE dd, MMMM yyyy' }}</td>
             <td><button type="button" name="button" onclick="conservartema()" [routerLink]="['/clientes/form',cliente.id]"
               class="btn text-white bg-dark border-success">
                 Editar</button>
@@ -38,7 +49,7 @@
           </tr>
         </tbody>
       </table>
-
+      <paginator-nav *ngIf="paginador" [paginador] = "paginador" ></paginator-nav>
     </div>
   </div>
 </div>
