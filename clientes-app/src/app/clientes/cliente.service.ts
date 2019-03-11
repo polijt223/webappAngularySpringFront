@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 //import { CLIENTES } from './clientes.json';
 import { Cliente } from './cliente';
+import { Region } from './region';
 import { of,Observable,throwError } from 'rxjs';
 //import { of } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpRequest, HttpEvent } from '@angular/common/http';
@@ -139,5 +140,9 @@ export class ClienteService {
     return this.http.request(req);
   }
 
+  getRegiones(): Observable<Region[]> {
+   
+    return this.http.get<Region[]>(this.urlEndPoint+'/regiones');
+  }
 
 }
