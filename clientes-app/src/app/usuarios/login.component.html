@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+<div class="container py-5">
+
+  <div class="row">
+  <div class="d-none d-md-block col-md-3"></div>
+
+  <div id="" class="col-12 col-md-6 card bg-dark text-white border-success ">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+
+      <form #clienteForm="ngForm">
+        <div class="form-group row">
+          <label for="username" class="col-form-label col-sm-4">Usuario</label>
+          <div class="col-sm-8">
+            <input [(ngModel)]="usuario.username" type="text" placeholder="Usuario" name="username" 
+            class="form-control border-success" autofocus required> 
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="password" class="col-form-label col-sm-4">Clave</label>
+          <div class="col-sm-8">
+            <input [(ngModel)]="usuario.password" type="password" placeholder="Contraseña" 
+            name="password" class="form-control border-success" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button id="" role="button" class="btn btn-lg btn-block text-white bg-dark border-success" (click)="login()" >Ingresar</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  </div>
+</div>

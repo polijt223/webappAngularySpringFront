@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import {tap} from 'rxjs/operators';
 import {ActivatedRoute} from '@angular/router';
 import {ModalService} from './detalle/modal.service';
+import { AuthService } from '../usuarios/auth.service';
 
 @Component({
   selector: 'app-clientes',
@@ -19,10 +20,14 @@ export class ClientesComponent implements OnInit {
   
   constructor(private clienteService: ClienteService,
               private activatedRoute: ActivatedRoute,
-              private modalService: ModalService ) { }
+              private modalService: ModalService,
+              private authService: AuthService ) { }
 
   ngOnInit() {
-      
+    window.onload = function (){
+      setTimeout (console.clear, 500); 
+    }
+    
       this.activatedRoute.paramMap.subscribe( params => {
         let page:number = +params.get('page');
 
@@ -31,13 +36,13 @@ export class ClientesComponent implements OnInit {
         }
 
         this.clienteService.getClientes(page).pipe(
-          tap(response => {
+         /* tap(response => {
             
             console.log("ClienteComponent tap 3");
             (response.content as Cliente[]).forEach(
               cliente =>{console.log(cliente.nombre);}
             );
-          })
+          })  */   //Uso de tap, innesesario en este ejemplo 
         ).subscribe(response => {
           this.clientes = response.content as Cliente[];
           this.paginador = response;

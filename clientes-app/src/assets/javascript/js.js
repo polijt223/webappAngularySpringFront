@@ -88,7 +88,7 @@ function cambiartema(texto){
 
 
     navth.setAttribute("class","navbar navbar-expand-sm navbar-dark bg-"+color+" fixed-top ");
-    btnf1.setAttribute("class","btn btn-outline-light my-2 my-sm-0");
+    //btnf1.setAttribute("class","btn btn-outline-light my-2 my-sm-0");
 
     var card1Prueba = document.getElementById("card1h");
     if (isInPage(card1Prueba)) {
@@ -110,7 +110,7 @@ function cambiartema(texto){
     if (isInPage(listCss)) {
         cardListaUsuariosPrincipal.setAttribute("class","card border-"+color+" mb-3");
         cardListaUsuariosBody.setAttribute("class","card-body text-light bg-"+color);
-        btnListaUsuariosCrear.setAttribute("class","btn btn-rounded btn-"+color+" border-success");
+       // btnListaUsuariosCrear.setAttribute("class","btn btn-rounded btn-"+color+" border-success");
         tbodyListaUsuariosDatos.setAttribute("class","bg-white text-"+color);
     }
     
@@ -172,7 +172,6 @@ function conservartema(){
 function isInPage(node) {
     return (node === document.body) ? false : document.body.contains(node);
 }
-
 
 
 
