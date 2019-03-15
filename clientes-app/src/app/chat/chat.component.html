@@ -1,0 +1,47 @@
+<div class="container-fluid  fixed-bottom ">
+  <div class="row justify-content-end">
+    <div class=" col-12 col-md-6 col-lg-4 col-xl-3">
+      <div id="cardchat" style="height:70px;" class="card bg-dark text-primary">
+        
+        <div class="card-header  row justify-content-end">
+          <form class="form-inline">
+            <div *ngIf="!conectado" class="form-group col-6">
+                <input type="text"  [(ngModel)]="mensaje.username" class="form-control col-12" autocomplete="off" placeholder="Tú usuario" name="texto">
+            </div>
+            <button id="btnChatConectar" *ngIf="!conectado" class="btn btn-outline-light mr-4 col-5 " (click)="conectar()" onclick="mostrarChat(),concervarColorEspaciado()" [disabled]="!mensaje.username" type="button">Conectar Chat</button>
+          </form>
+          <button id="btnChatEspaciado" *ngIf="conectado" class="btn btn-dark col-5 " onclick="mostrarChat()" type="button"></button>
+          <button id="btnChatOcultarChat" *ngIf="conectado" class="btn btn-outline-light  mr-4 col-2" onclick="ocultarChat()" type="button">_</button>
+          <button id="btnchatcerrar" *ngIf="conectado" class="btn btn-outline-danger  mr-4 col-2" (click)="desconectar()" onclick="ocultarChat()" type="button">X</button>
+        </div>
+
+        <div #scrollChat [scrollTop]="scrollChat.scrollHeight" id="bodyChat" class="card-body " style="overflow-y: scroll; height: 100px;">
+          <ul class="list-group bg-dark">
+            <li style="margin-bottom: 4px;" class="list-group-item list-group-item-light border border-primary text-primary" *ngFor="let mensaje of mensajes">
+              <span *ngIf="mensaje.tipo=='NUEVO_USUARIO'">{{mensaje.fecha | date:'shortTime' }}
+                 Se conecto <span [ngStyle]="{'color': mensaje.color}">{{mensaje.username}}</span>
+              </span>
+              <span *ngIf="mensaje.tipo=='MENSAJE'">{{mensaje.fecha | date:'shortTime' }} 
+                <span [ngStyle]="{'color': mensaje.color}">{{mensaje.username}}</span> dice: <br> {{mensaje.texto}}
+              </span>
+            </li>
+          </ul>
+        </div>
+        
+        <div id="footerChat" class="card-footer">
+          <form class="form-inline">
+            <div>{{escribiendo}}</div>
+            <div class="form-group col-8">
+              <input type="text" [(ngModel)]="mensaje.texto" (keyup)="usuarioEscribiendo()" class="form-control col-12" autocomplete="off" placeholder="Escribe un mensajhe..." name="texto">
+            </div>
+            <button id="btnChatEnviar" class="btn btn-outline-light col-4" [disabled]="!conectado" (click)="enviarMensaje()" type="submit">Enviar</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

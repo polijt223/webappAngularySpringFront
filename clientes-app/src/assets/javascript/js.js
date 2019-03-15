@@ -64,10 +64,53 @@ function menoszoom(x){
     x.setAttribute("class","card  border border-"+h);
 }
 
+function mostrarChat(){
+    bodyChat.setAttribute("class","card-body ");
+    footerChat.setAttribute("class","card-footer");
+    cardchat.setAttribute("style","transition: 1s; height: 365px; ");
+}
+function ocultarChat(){
+    bodyChat.setAttribute("class","d-none card-body ");
+    footerChat.setAttribute("class","d-none card-footer");
+    cardchat.setAttribute("style"," height:70px; ");
+}
+
 function cambiartema(texto){
 
     var color;
     var colorC;
+
+    var hElemt = elementohidden.getAttribute("class");
+    
+    var navxlvar = document.getElementById("navthxl");
+    if (isInPage(navxlvar)) {
+        $("#navthxl").removeClass(hElemt);
+    }
+
+    var navsmvar = document.getElementById("navthsm");
+    if (isInPage(navsmvar)) {
+        $("#navthsm").removeClass(hElemt);
+    }
+
+    var navlgvar = document.getElementById("navthlg");
+    if (isInPage(navlgvar)) {
+        $("#navthlg").removeClass(hElemt);
+    }
+
+    var navmdvar = document.getElementById("navthmd");
+    if (isInPage(navmdvar)) {
+        $("#navthmd").removeClass(hElemt);
+    }
+
+    var navxsvar = document.getElementById("navthxs");
+    if (isInPage(navxsvar)) {
+        $("#navthxs").removeClass(hElemt);
+    }
+
+  
+
+    
+
 
     if(texto.localeCompare("dropdowncolor1")==0){
         color = "warning";
@@ -86,9 +129,33 @@ function cambiartema(texto){
         colorC = "Dark";
     }
 
+      //nav bar modificado id
+      var navxlvar2 = document.getElementById("navxl");
+      if (isInPage(navxlvar2)) {
+          navxl.setAttribute("class","d-none d-xl-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+      }
+  
+      var navsmvar2 = document.getElementById("navsm");
+      if (isInPage(navsmvar2)) {
+          navsm.setAttribute("class","d-none d-sm-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+      }
+  
+      var navlgvar2 = document.getElementById("navlg");
+      if (isInPage(navlgvar2)) {
+          navlg.setAttribute("class","d-none d-lg-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+      }
+  
+      var navmdvar2 = document.getElementById("navmd");
+      if (isInPage(navmdvar2)) {
+          navmd.setAttribute("class","d-none d-md-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+      }
+  
+      var navxsvar2 = document.getElementById("navxs");
+      if (isInPage(navxsvar2)) {
+          navxs.setAttribute("class","d-block d-sm-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+      }
 
-    navth.setAttribute("class","navbar navbar-expand-sm navbar-dark bg-"+color+" fixed-top ");
-    //btnf1.setAttribute("class","btn btn-outline-light my-2 my-sm-0");
+
 
     var card1Prueba = document.getElementById("card1h");
     if (isInPage(card1Prueba)) {
@@ -105,12 +172,118 @@ function cambiartema(texto){
         card3h.setAttribute("class","card  border border-"+color+"");
         cardTitle3.setAttribute("class","card-title text-"+color+"");
     }
+
+    var cardchatvar = document.getElementById("cardchat");
+    if (isInPage(cardchatvar)) {
+        cardchat.setAttribute("class","card bg-"+color+" text-primary");
+    }
+
+    var btnChatEspaciadovar = document.getElementById("btnChatEspaciado");
+    if (isInPage(btnChatEspaciadovar)) {
+        btnChatEspaciado.setAttribute("class","btn btn-"+color+" col-5");
         
+        if (color.localeCompare("danger")==0) {
+            btnchatcerrar.setAttribute("class","btn btn-outline-light  mr-4 col-2");
+        }else{
+            btnchatcerrar.setAttribute("class","btn btn-outline-danger  mr-4 col-2");
+        }
+    }
+
+    var titlePrinCaroucel = document.getElementById("blocktexttoplg");
+    if (isInPage(titlePrinCaroucel)) {
+        if (color.localeCompare("dark")==0) {
+            $("#blocktexttoplg").css("color", "#ffffff");
+        }
+        if (color.localeCompare("danger")==0) {
+            $("#blocktexttoplg").css("color", "#dc3545");
+        }
+        if (color.localeCompare("primary")==0) {
+            $("#blocktexttoplg").css("color", "#007bff");
+        }
+        if (color.localeCompare("warning")==0) {
+            $("#blocktexttoplg").css("color", "#ffc107");
+        }
+
+    }
+
+
+
+    var titlePrinCaroucel = document.getElementById("blocktexttopxl");
+    if (isInPage(titlePrinCaroucel)) {
+        if (color.localeCompare("dark")==0) {
+            $("#blocktexttopxl").css("color", "#ffffff");
+        }
+        if (color.localeCompare("danger")==0) {
+            $("#blocktexttopxl").css("color", "#dc3545");
+        }
+        if (color.localeCompare("primary")==0) {
+            $("#blocktexttopxl").css("color", "#007bff");
+        }
+        if (color.localeCompare("warning")==0) {
+            $("#blocktexttopxl").css("color", "#ffc107");
+        }
+
+    }
+
+    var titlePrinCaroucel = document.getElementById("blocktexttopsm");
+    if (isInPage(titlePrinCaroucel)) {
+        if (color.localeCompare("dark")==0) {
+            $("#blocktexttopsm").css("color", "#ffffff");
+        }
+        if (color.localeCompare("danger")==0) {
+            $("#blocktexttopsm").css("color", "#dc3545");
+        }
+        if (color.localeCompare("primary")==0) {
+            $("#blocktexttopsm").css("color", "#007bff");
+        }
+        if (color.localeCompare("warning")==0) {
+            $("#blocktexttopsm").css("color", "#ffc107");
+        }
+
+    }
+
+    var titlePrinCaroucel = document.getElementById("blocktexttopxs");
+    if (isInPage(titlePrinCaroucel)) {
+        if (color.localeCompare("dark")==0) {
+            $("#blocktexttopxs").css("color", "#ffffff");
+        }
+        if (color.localeCompare("danger")==0) {
+            $("#blocktexttopxs").css("color", "#dc3545");
+        }
+        if (color.localeCompare("primary")==0) {
+            $("#blocktexttopxs").css("color", "#007bff");
+        }
+        if (color.localeCompare("warning")==0) {
+            $("#blocktexttopxs").css("color", "#ffc107");
+        }
+
+    }
+
+    var titlePrinCaroucel = document.getElementById("blocktexttopmd");
+    if (isInPage(titlePrinCaroucel)) {
+        if (color.localeCompare("dark")==0) {
+            $("#blocktexttopmd").css("color", "#ffffff");
+        }
+        if (color.localeCompare("danger")==0) {
+            $("#blocktexttopmd").css("color", "#dc3545");
+        }
+        if (color.localeCompare("primary")==0) {
+            $("#blocktexttopmd").css("color", "#007bff");
+        }
+        if (color.localeCompare("warning")==0) {
+            $("#blocktexttopmd").css("color", "#ffc107");
+        }
+
+    }
+
     var listCss = document.getElementById("listClientesCSS");
     if (isInPage(listCss)) {
         cardListaUsuariosPrincipal.setAttribute("class","card border-"+color+" mb-3");
         cardListaUsuariosBody.setAttribute("class","card-body text-light bg-"+color);
-       // btnListaUsuariosCrear.setAttribute("class","btn btn-rounded btn-"+color+" border-success");
+        var btnListaUsuariosCrearVAR = document.getElementById("btnListaUsuariosCrear");
+        if (isInPage(btnListaUsuariosCrearVAR)) {
+            btnListaUsuariosCrear.setAttribute("class","btn btn-rounded btn-"+color+" border-success");
+        }
         tbodyListaUsuariosDatos.setAttribute("class","bg-white text-"+color);
     }
     
@@ -118,6 +291,12 @@ function cambiartema(texto){
     if (isInPage(formCSS)) {
         cardFormClienteNew.setAttribute("class","card bg-"+color+" text-white border-success");
         btnFormClienteNew.setAttribute("class","btn text-white bg-"+color+" border-success");
+    }
+
+    var formCSS = document.getElementById("cardFormLogin");
+    if (isInPage(formCSS)) {
+        cardFormLogin.setAttribute("class","col-12 col-md-6 card bg-"+color+" text-white border-success");
+        btnFormLogin.setAttribute("class","btn btn-lg btn-block text-white bg-"+color+" border-success");
     }
 
     if (color.localeCompare("dark")==0) {
@@ -148,6 +327,19 @@ function cambiartema(texto){
 
 }
 
+function concervarColorEspaciado(){
+    var colorG = elementohidden2.getAttribute("class");
+    setTimeout(()=>{
+        btnChatEspaciado.setAttribute("class","btn btn-"+colorG+" col-5");
+        if (colorG.localeCompare("danger")==0) {
+            btnchatcerrar.setAttribute("class","btn btn-outline-light  mr-4 col-2");
+        }else{
+            btnchatcerrar.setAttribute("class","btn btn-outline-danger  mr-4 col-2");
+        }
+        
+    },"50");
+}
+
 let colorHidden = "";
 function conservartema(){
 
@@ -172,6 +364,84 @@ function conservartema(){
 function isInPage(node) {
     return (node === document.body) ? false : document.body.contains(node);
 }
+
+function actualizarbg(){
+    var h = elementohidden.getAttribute("class");
+    $("#navthxl").addClass(h);
+    navthxl.setAttribute("id","navxl");
+    $("#navthlg").addClass(h);
+    navthlg.setAttribute("id","navlg");
+    $("#navthmd").addClass(h);
+    navthmd.setAttribute("id","navmd");
+    $("#navthsm").addClass(h);
+    navthsm.setAttribute("id","navsm");
+    $("#navthxs").addClass(h);
+    navthxs.setAttribute("id","navxs");
+
+}
+
+function restaurarbg(){
+    var h = elementohidden.getAttribute("class");
+    var elementonavxl = document.getElementById("navxl");
+    if (isInPage(elementonavxl)) {
+    $("#navxl").removeClass(h);
+    navxl.setAttribute("id","navthxl");
+    $("#navlg").removeClass(h);
+    navlg.setAttribute("id","navthlg");
+    $("#navmd").removeClass(h);
+    navmd.setAttribute("id","navthmd");
+    $("#navsm").removeClass(h);
+    navsm.setAttribute("id","navthsm");
+    $("#navxs").removeClass(h);
+    navxs.setAttribute("id","navthxs");
+    }
+}
+
+new WOW().init();
+
+$(window).scroll(function(){
+    var h = elementohidden.getAttribute("class");
+
+    if ($("#navthxl").offset().top > 800) {
+        $("#navthxl").addClass(h);
+    } else {
+        $("#navthxl").removeClass(h);
+    }
+
+    if ($("#navthlg").offset().top > 450) {
+        $("#navthlg").addClass(h);
+    } else {
+        $("#navthlg").removeClass(h);
+    }
+
+    if ($("#navthmd").offset().top > 300) {
+        $("#navthmd").addClass(h);
+    } else {
+        $("#navthmd").removeClass(h);
+    }
+
+    if ($("#navthsm").offset().top > 800) {
+        $("#navthsm").addClass(h);
+    } else {
+        $("#navthsm").removeClass(h);
+    }
+
+    if ($("#navthxs").offset().top > 500) {
+        $("#navthxs").addClass(h);
+    } else {
+        $("#navthxs").removeClass(h);
+    }
+});
+
+
+setTimeout(()=>{
+    var URLactual = window.location.href;
+    if (URLactual.localeCompare("http://localhost:4200/clientes")==0 || URLactual.localeCompare("http://localhost:4200/login")==0 ) {
+        actualizarbg();
+    }
+
+},"1000");
+    
 
 
 

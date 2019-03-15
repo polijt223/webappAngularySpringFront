@@ -23,6 +23,7 @@ import {MatDatepickerModule } from '@angular/material';
 import { MatMomentDateModule} from '@angular/material-moment-adapter';
 import { DetalleComponent } from './clientes/detalle/detalle.component';
 import { LoginComponent } from './usuarios/login.component';
+import { ChatComponent } from './chat/chat.component';
 
 registerLocaleData(localeEsAr, 'es');
 
@@ -49,7 +50,8 @@ const routes: Routes =  [
     FormComponent,
     PaginatorComponent,
     DetalleComponent,
-    LoginComponent
+    LoginComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

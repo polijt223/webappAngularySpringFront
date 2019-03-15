@@ -1,4 +1,4 @@
-<nav id="navth" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav id="navthxl" class=" d-none d-xl-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
     <div class="container">
         <a class=" navbar-brand text-white">
             <img src="../../assets/imagenes/twico.png" alt=""> TW3
@@ -11,10 +11,10 @@
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" onclick="conservartema()" routerLink="/home">Inicio</a>
+                    <a class="nav-link" onclick="conservartema(),restaurarbg()" routerLink="/home">Inicio</a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" onclick="conservartema()" routerLink="/clientes">Clientes</a>
+                    <a class="nav-link" onclick="conservartema(),actualizarbg()" routerLink="/clientes">Clientes</a>
                 </li>
                 
                 
@@ -29,11 +29,185 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <button *ngIf="!authService.isAuthenticated()" id="btnf1" routerLink="/login" class="btn btn-outline-light my-2 my-sm-0" type="submit">Ingresar</button>
+                <button *ngIf="!authService.isAuthenticated()" id="btnf2" onclick="conservartema(),actualizarbg()" routerLink="/login"   class="btn btn-outline-light my-2 my-sm-0" type="submit">
+                    Ingresar
+                </button>
                 <li *ngIf="authService.isAuthenticated()" class="nav-item dropdown">
                     <a class=" btn btn-outline-light  dropdown-toggle" role="button" href="#" id="dropdownId1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{authService.usuario.username}}</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId1">
-                        <button (click)="logout()" class="dropdown-item" type="submit" >Cerrar Sesion</button>
+                        <button onclick="restaurarbg()" (click)="logout()" class="dropdown-item"  type="submit" >Cerrar Sesion</button>
+                    </div>
+                </li>
+            </form>
+
+        </div>
+    </div>
+</nav>
+<nav id="navthlg" class=" d-none d-lg-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
+    <div class="container">
+        <a class=" navbar-brand text-white">
+            <img src="../../assets/imagenes/twico.png" alt=""> TW3
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" onclick="conservartema(),restaurarbg()" routerLink="/home">Inicio</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" onclick="conservartema(),actualizarbg()" routerLink="/clientes">Clientes</a>
+                </li>
+                
+                
+                <li class="nav-item dropdown">
+                    <a class=" nav-link  dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cambiar Thema</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a id="dropdowncolor1" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor1')" >Amarillo</a>
+                        <a id="dropdowncolor2" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor2')" >rojo</a>
+                        <a id="dropdowncolor3" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor3')" >azul</a>
+                        <a id="dropdowncolor4" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor4')" >negro</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button *ngIf="!authService.isAuthenticated()" id="btnf1" routerLink="/login" onclick="conservartema(),actualizarbg()" class="btn btn-outline-light my-2 my-sm-0" type="submit">Ingresar</button>
+                <li *ngIf="authService.isAuthenticated()" class="nav-item dropdown">
+                    <a class=" btn btn-outline-light  dropdown-toggle" role="button" href="#" id="dropdownId1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{authService.usuario.username}}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId1">
+                        <button onclick="restaurarbg()" (click)="logout()" class="dropdown-item"  type="submit" >Cerrar Sesion</button>
+                    </div>
+                </li>
+            </form>
+
+        </div>
+    </div>
+</nav>
+<nav id="navthmd" class=" d-none d-md-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
+    <div class="container">
+        <a class=" navbar-brand text-white">
+            <img src="../../assets/imagenes/twico.png" alt=""> TW3
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" onclick="conservartema(),restaurarbg()" routerLink="/home">Inicio</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" onclick="conservartema(),actualizarbg()" routerLink="/clientes">Clientes</a>
+                </li>
+                
+                
+                <li class="nav-item dropdown">
+                    <a class=" nav-link  dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cambiar Thema</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a id="dropdowncolor1" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor1')" >Amarillo</a>
+                        <a id="dropdowncolor2" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor2')" >rojo</a>
+                        <a id="dropdowncolor3" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor3')" >azul</a>
+                        <a id="dropdowncolor4" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor4')" >negro</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button *ngIf="!authService.isAuthenticated()" id="btnf3" routerLink="/login" onclick="conservartema(),actualizarbg()" class="btn btn-outline-light my-2 my-sm-0" type="submit">Ingresar</button>
+                <li *ngIf="authService.isAuthenticated()" class="nav-item dropdown">
+                    <a class=" btn btn-outline-light  dropdown-toggle" role="button" href="#" id="dropdownId1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{authService.usuario.username}}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId1">
+                        <button onclick="restaurarbg()" (click)="logout()" class="dropdown-item" type="submit" >Cerrar Sesion</button>
+                    </div>
+                </li>
+            </form>
+
+        </div>
+    </div>
+</nav>
+<nav id="navthsm" class=" d-none d-sm-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
+    <div class="container">
+        <a class=" navbar-brand text-white">
+            <img src="../../assets/imagenes/twico.png" alt=""> TW3
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" onclick="conservartema(),restaurarbg()" routerLink="/home">Inicio</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" onclick="conservartema(),actualizarbg()" routerLink="/clientes">Clientes</a>
+                </li>
+                
+                
+                <li class="nav-item dropdown">
+                    <a class=" nav-link  dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cambiar Thema</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a id="dropdowncolor1" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor1')" >Amarillo</a>
+                        <a id="dropdowncolor2" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor2')" >rojo</a>
+                        <a id="dropdowncolor3" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor3')" >azul</a>
+                        <a id="dropdowncolor4" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor4')" >negro</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button *ngIf="!authService.isAuthenticated()" id="btnf4" routerLink="/login" onclick="conservartema(),actualizarbg()" class="btn btn-outline-light my-2 my-sm-0" type="submit">Ingresar</button>
+                <li *ngIf="authService.isAuthenticated()" class="nav-item dropdown">
+                    <a class=" btn btn-outline-light  dropdown-toggle" role="button" href="#" id="dropdownId1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{authService.usuario.username}}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId1">
+                        <button onclick="restaurarbg()" (click)="logout()" class="dropdown-item" type="submit" >Cerrar Sesion</button>
+                    </div>
+                </li>
+            </form>
+
+        </div>
+    </div>
+</nav>
+<nav id="navthxs" class=" d-block d-sm-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
+    <div class="container">
+        <a class=" navbar-brand text-white">
+            <img src="../../assets/imagenes/twico.png" alt=""> TW3
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" onclick="conservartema(),restaurarbg()" routerLink="/home">Inicio</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" onclick="conservartema(),actualizarbg()" routerLink="/clientes">Clientes</a>
+                </li>
+                
+                
+                <li class="nav-item dropdown">
+                    <a class=" nav-link  dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cambiar Thema</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a id="dropdowncolor1" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor1')" >Amarillo</a>
+                        <a id="dropdowncolor2" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor2')" >rojo</a>
+                        <a id="dropdowncolor3" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor3')" >azul</a>
+                        <a id="dropdowncolor4" class="dropdown-item hbutton"  onclick="cambiartema('dropdowncolor4')" >negro</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button *ngIf="!authService.isAuthenticated()" id="btnf5" routerLink="/login" onclick="conservartema(),actualizarbg()" class="btn btn-outline-light my-2 my-sm-0" type="submit">Ingresar</button>
+                <li *ngIf="authService.isAuthenticated()" class="nav-item dropdown">
+                    <a class=" btn btn-outline-light  dropdown-toggle" role="button" href="#" id="dropdownId1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{authService.usuario.username}}</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId1">
+                        <button onclick="restaurarbg()" (click)="logout()" class="dropdown-item" type="submit" >Cerrar Sesion</button>
                     </div>
                 </li>
             </form>

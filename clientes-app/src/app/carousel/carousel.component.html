@@ -1,5 +1,23 @@
+<div id="blocktexttopxl" class="d-none d-xl-block" >
+    <p id="tituloCarousel" class="display-3">Lorem, ipsum dolor.</p>
+    <p style="color:white;" id="leyendaCarousel" class="h3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quibusdam.</p>
+</div> 
+<div id="blocktexttoplg" class="d-none d-lg-block d-xl-none" >
+        <p id="tituloCarousel" class="display-4">Lorem, ipsum dolor.</p>
+        <p style="color:white;" id="leyendaCarousel" class="h4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quibusdam.</p>
+</div> 
+<div id="blocktexttopmd" class="d-none d-md-block d-lg-none" >
+        <p id="tituloCarousel" class="display-4">Lorem, ipsum dolor.</p>
+</div>
+<div id="blocktexttopsm" class="d-none d-sm-block d-md-none" >
+        <p id="tituloCarousel" class="display-4">Lorem, ipsum dolor.</p>
+</div>
+<div id="blocktexttopxs" class="d-block d-sm-none" >
+        <p id="tituloCarousel" class="h1">Lorem, ipsum dolor.</p>
+</div>
+
 <div class=" d-none d-md-block">
-<div id="carouselId" class="carousel slide  mt-3" data-ride="carousel">
+<div id="carouselId" class="carousel slide " data-ride="carousel">
   <ol class="carousel-indicators">
       <li data-target="#carouselId" data-slide-to="0" class="active"></li>
       <li data-target="#carouselId" data-slide-to="1"></li>
@@ -8,12 +26,9 @@
       <li data-target="#carouselId" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-        <div *ngFor="let num of listanumeros"  class="carousel-item {{listaactive[num-1]}}">
+        <div  *ngFor="let num of listanumeros"  class="carousel-item {{listaactive[num-1]}}">
             <img class="d-block w-100"  src="../../assets/imagenes/tw{{num}}.jpg" alt="Five slide">
-            <div id="blocktext" class="carousel-caption d-none d-lg-block " >
-                <p id="tituloCarousel" class="display-3">Lorem, ipsum dolor.</p>
-                <p id="leyendaCarousel" class="h3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quibusdam.</p>
-            </div> 
+            
             
             
         </div>
@@ -29,8 +44,10 @@
 </div>
 </div>
 
+
+
 <div class=" d-md-none">
-<div id="carouselIdCel" class="carousel slide  mt-3" data-ride="carousel">
+<div id="carouselIdCel" class="carousel slide " data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselIdCel" data-slide-to="0" class="active"></li>
         <li data-target="#carouselIdCel" data-slide-to="1"></li>
@@ -41,9 +58,6 @@
     <div class="carousel-inner" role="listbox">
           <div *ngFor="let num of listanumeros"  class="carousel-item {{listaactive[num-1]}}">
               <img class="d-block w-100"  src="../../assets/imagenes/twcel{{num}}.jpg" alt="Five slide">
-              <div id="blocktext" class="carousel-caption " >
-                  <p id="tituloCarousel" class="h1">Lorem, ipsum dolor.</p>
-              </div> 
           </div>
     </div>
     <a class="carousel-control-prev" href="#carouselIdCel" role="button" data-slide="prev">
