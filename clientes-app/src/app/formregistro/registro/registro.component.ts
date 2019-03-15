@@ -25,13 +25,13 @@ export class RegistroComponent implements OnInit {
   }
 
   create(): void{
-    this.usuario.roles = ['ROLE_USER'],['ROLE_ADMIN'];
+    //this.usuario.roles = ['ROLE_USER'],['ROLE_ADMIN'];
     console.log(this.usuario);
-    
+    /*
     this.usuarioService.create(this.usuario)
     .subscribe( usuario => {
       this.router.navigate(['/login']);
-      Swal.fire({title: 'Cliente Guardado',text: `El Usuario ${usuario.nombre} se registro correctamente`,type: 'success',confirmButtonText: 'Aceptar' });
+      Swal.fire({title: 'Cliente Usuario',text: `El Usuario ${usuario.nombre} se registro correctamente`,type: 'success',confirmButtonText: 'Aceptar' });
     },
     err => {
       this.errores = err.error.errors as string[];
@@ -39,6 +39,7 @@ export class RegistroComponent implements OnInit {
       console.error(err.error.errors);
     }
     );
+    */
     
   }
 
