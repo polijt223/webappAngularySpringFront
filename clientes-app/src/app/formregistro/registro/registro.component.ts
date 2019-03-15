@@ -15,10 +15,10 @@ export class RegistroComponent implements OnInit {
   private usuario: Usuario = new Usuario();
 
 
-  constructor(private usuarioService:UsuariosService,
+  constructor(//private usuarioService:UsuariosService,
               private router:Router,
               private activateRoute: ActivatedRoute
-              ) { }
+              ) {  } 
               
 
   ngOnInit() {
