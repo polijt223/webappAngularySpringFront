@@ -1,0 +1,70 @@
+
+<div class="container " style="margin-bottom:200px;margin-top: 200px">
+  <div class="row">
+    <div class="d-none d-md-block col-md-2"></div>
+    <div class="col-12 col-md-8">
+      <div class="display-1 text-danger text-center my-4">Registrate!</div>
+      
+        <div class="form-group row">
+
+          <div class="col-sm-12">
+              <input type="text" [(ngModel)]="usuario.username" name="username" style="height: 50px" placeholder="Ingrese Nombre de usuario" class="form-control border-danger" >
+            </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input type="password" [(ngModel)]="usuario.password" name="password" style="height: 50px" placeholder="Contraseña" class="form-control border-danger" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input type="text" [(ngModel)]="usuario.nombre" name="nombre" style="height: 50px" placeholder="Ingrese nombre" class="form-control border-danger" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input type="text" [(ngModel)]="usuario.apellido" name="apellido" style="height: 50px" placeholder="Ingrese apellido" class="form-control border-danger" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input type="email" [(ngModel)]="usuario.email" name="email" style="height: 50px" placeholder="Ingrese E-mail"  class="form-control border-danger">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <button id="" role="button" (click)="create()" class="btn btn-lg btn-block text-white bg-dark border-danger">Registrar Cuenta!</button>
+          </div>
+        </div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2"></div>
+  </div>
+</div>
+
+
+<video autoplay="autoplay" loop width="100%" height="100%" style="
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+   
+    position: fixed;    
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); 
+   
+    z-index: -100;
+   
+    background-size: cover;
+">
+  <source src="../../../assets/video/tw3medalofwolf.mp4" type="video/mp4">
+</video>
+
+
+
