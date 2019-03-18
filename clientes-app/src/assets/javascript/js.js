@@ -55,7 +55,6 @@ function cambiarimagen5(x){
 
 function maszoom(x){
     var h = elementohidden2.getAttribute("class");
-    console.log(h);
     x.setAttribute("class","card mt-3 shadow-lg border border-"+h);
     
 }
@@ -346,23 +345,10 @@ function cambiartema(texto){
 
     var formularioRegvarvar = document.getElementById("formularioRegvar");
     if (isInPage(formularioRegvarvar)) {
-        let textRegistroBigvar = document.getElementById("textRegistroBig");
-        if (isInPage(textRegistroBigvar)) {
-            if (color.localeCompare("dark")==0) {
-                textRegistroBig.setAttribute("class","d-none d-sm-block display-1 text-white text-center my-4");
-            }else{
-            textRegistroBig.setAttribute("class","d-none d-sm-block display-1 text-"+color+" text-center my-4");
-            }
-        }else{
-            if (color.localeCompare("dark")==0) {
-                textRegistroSmall.setAttribute("class","d-block d-sm-none display-3 text-white text-center my-4");
-            }else{
-                textRegistroSmall.setAttribute("class","d-block d-sm-none display-3 text-"+color+" text-center my-4");
-            }
-            
-        }
         
         if (color.localeCompare("dark")==0) {
+            textRegistroBig.setAttribute("class","d-none d-sm-block display-1 text-white text-center my-4");
+            textRegistroSmall.setAttribute("class","d-block d-sm-none display-3 text-white text-center my-4");
             inputusername.setAttribute("class","form-control border-light");
             inputpassword.setAttribute("class","form-control border-light");
             inputnombre.setAttribute("class","form-control border-light");
@@ -370,6 +356,8 @@ function cambiartema(texto){
             inputemail.setAttribute("class","form-control border-light");
             btnregNewUser.setAttribute("class","btn btn-lg btn-block text-white bg-dark border-white");
         }else{
+            textRegistroBig.setAttribute("class","d-none d-sm-block display-1 text-"+color+" text-center my-4");
+            textRegistroSmall.setAttribute("class","d-block d-sm-none display-3 text-"+color+" text-center my-4");
             inputusername.setAttribute("class","form-control border-"+color);
             inputpassword.setAttribute("class","form-control border-"+color);
             inputnombre.setAttribute("class","form-control border-"+color);
@@ -393,7 +381,7 @@ function concervarColorEspaciado(){
             btnchatcerrar.setAttribute("class","btn btn-outline-danger  mr-4 col-2");
         }
         
-    },"50");
+    },150);
 }
 
 let colorHidden = "";
