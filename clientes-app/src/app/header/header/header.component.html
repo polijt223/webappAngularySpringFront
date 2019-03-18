@@ -11,10 +11,10 @@
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" onclick="conservartema(),restaurarbg()" routerLink="/home">Inicio</a>
+                    <a class="nav-link" onclick="restaurarbg(),conservartema()" routerLink="/home">Inicio</a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" onclick="conservartema(),actualizarbg()" routerLink="/clientes">Clientes</a>
+                    <a class="nav-link" onclick="actualizarbg(),conservartema()" routerLink="/clientes">Clientes</a>
                 </li>
                 
                 
@@ -29,13 +29,13 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <button *ngIf="!authService.isAuthenticated()" id="btnf2" onclick="conservartema(),actualizarbg()" routerLink="/login"   class="btn btn-outline-light my-2 my-sm-0" type="submit">
+                <button *ngIf="!authService.isAuthenticated()" id="btnf2" onclick="actualizarbg(),conservartema()" routerLink="/login"   class="btn btn-outline-light my-2 my-sm-0" type="submit">
                     Ingresar
                 </button>
                 <li *ngIf="authService.isAuthenticated()" class="nav-item dropdown">
                     <a class=" btn btn-outline-light  dropdown-toggle" role="button" href="#" id="dropdownId1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{authService.usuario.username}}</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId1">
-                        <button onclick="restaurarbg()" (click)="logout()" class="dropdown-item"  type="submit" >Cerrar Sesion</button>
+                        <button  (click)="logout()" onclick="conservartema(),restaurarbg(),conservartema()" class="dropdown-item"  type="submit" >Cerrar Sesion</button>
                     </div>
                 </li>
             </form>
@@ -43,7 +43,7 @@
         </div>
     </div>
 </nav>
-<nav id="navthlg" class=" d-none d-lg-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
+<nav id="navthlg" class=" d-none d-lg-block d-xl-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
     <div class="container">
         <a class=" navbar-brand text-white">
             <img src="../../assets/imagenes/twico.png" alt=""> TW3
@@ -86,7 +86,7 @@
         </div>
     </div>
 </nav>
-<nav id="navthmd" class=" d-none d-md-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
+<nav id="navthmd" class=" d-none d-md-block d-lg-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
     <div class="container">
         <a class=" navbar-brand text-white">
             <img src="../../assets/imagenes/twico.png" alt=""> TW3
@@ -129,7 +129,7 @@
         </div>
     </div>
 </nav>
-<nav id="navthsm" class=" d-none d-sm-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
+<nav id="navthsm" class=" d-none d-sm-block d-md-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top">
     <div class="container">
         <a class=" navbar-brand text-white">
             <img src="../../assets/imagenes/twico.png" alt=""> TW3
@@ -215,3 +215,4 @@
         </div>
     </div>
 </nav>
+

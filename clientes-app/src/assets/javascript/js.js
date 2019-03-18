@@ -80,38 +80,6 @@ function cambiartema(texto){
     var color;
     var colorC;
 
-    var hElemt = elementohidden.getAttribute("class");
-    
-    var navxlvar = document.getElementById("navthxl");
-    if (isInPage(navxlvar)) {
-        $("#navthxl").removeClass(hElemt);
-    }
-
-    var navsmvar = document.getElementById("navthsm");
-    if (isInPage(navsmvar)) {
-        $("#navthsm").removeClass(hElemt);
-    }
-
-    var navlgvar = document.getElementById("navthlg");
-    if (isInPage(navlgvar)) {
-        $("#navthlg").removeClass(hElemt);
-    }
-
-    var navmdvar = document.getElementById("navthmd");
-    if (isInPage(navmdvar)) {
-        $("#navthmd").removeClass(hElemt);
-    }
-
-    var navxsvar = document.getElementById("navthxs");
-    if (isInPage(navxsvar)) {
-        $("#navthxs").removeClass(hElemt);
-    }
-
-  
-
-    
-
-
     if(texto.localeCompare("dropdowncolor1")==0){
         color = "warning";
         colorC = "Warning";
@@ -129,6 +97,56 @@ function cambiartema(texto){
         colorC = "Dark";
     }
 
+    var hElemt = "bg-"+color;
+
+    var navxlvar = document.getElementById("navthxl");
+    if (isInPage(navxlvar)) {
+        if ($("#navthxl").offset().top > 800) {
+            navthxl.setAttribute("class"," d-none d-xl-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+        } else {
+            $("#navthxl").removeClass(hElemt);
+        }
+    }
+
+    var navsmvar = document.getElementById("navthsm");
+    if (isInPage(navsmvar)) {
+        if ($("#navthsm").offset().top > 800) {
+            navthxl.setAttribute("class","d-none d-sm-block d-md-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+        } else {
+            $("#navthsm").removeClass(hElemt);
+        }
+    }
+
+    var navlgvar = document.getElementById("navthlg");
+    if (isInPage(navlgvar)) {
+        if ($("#navthlg").offset().top > 450) {
+            navthlg.setAttribute("class","d-none d-lg-block d-xl-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+        } else {
+            $("#navthlg").removeClass(hElemt);
+        }
+    }
+
+    var navmdvar = document.getElementById("navthmd");
+    if (isInPage(navmdvar)) {
+        if ($("#navthmd").offset().top > 300) {
+            navthmd.setAttribute("class","d-none d-md-block d-lg-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+        } else {
+            $("#navthmd").removeClass(hElemt);
+        }
+    }
+
+    var navxsvar = document.getElementById("navthxs");
+    if (isInPage(navxsvar)) {
+        if ($("#navthxs").offset().top > 500) {
+            navthxs.setAttribute("class","d-block d-sm-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+        } else {
+            $("#navthxs").removeClass(hElemt);
+        }
+    }
+
+
+
+
       //nav bar modificado id
       var navxlvar2 = document.getElementById("navxl");
       if (isInPage(navxlvar2)) {
@@ -137,17 +155,17 @@ function cambiartema(texto){
   
       var navsmvar2 = document.getElementById("navsm");
       if (isInPage(navsmvar2)) {
-          navsm.setAttribute("class","d-none d-sm-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+          navsm.setAttribute("class","d-none d-sm-block d-md-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
       }
   
       var navlgvar2 = document.getElementById("navlg");
       if (isInPage(navlgvar2)) {
-          navlg.setAttribute("class","d-none d-lg-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+          navlg.setAttribute("class","d-none d-lg-block d-xl-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
       }
   
       var navmdvar2 = document.getElementById("navmd");
       if (isInPage(navmdvar2)) {
-          navmd.setAttribute("class","d-none d-md-block navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
+          navmd.setAttribute("class","d-none d-md-block d-lg-none navbar navbar-expand-md navbar-dark nav-transition-color fixed-top bg-"+color);
       }
   
       var navxsvar2 = document.getElementById("navxs");
@@ -295,8 +313,8 @@ function cambiartema(texto){
 
     var formCSS = document.getElementById("cardFormLogin");
     if (isInPage(formCSS)) {
-        cardFormLogin.setAttribute("class","col-12 col-md-6 card bg-"+color+" text-white border-success");
-        btnFormLogin.setAttribute("class","btn btn-lg btn-block text-white bg-"+color+" border-success");
+        cardFormLogin.setAttribute("class","col-12 col-md-6 card bg-"+color+" text-white border-light");
+        btnFormLogin.setAttribute("class","btn btn-lg btn-block text-white bg-"+color+" border-light");
     }
 
     if (color.localeCompare("dark")==0) {
@@ -324,6 +342,44 @@ function cambiartema(texto){
     acordeonBtn2.setAttribute("class","btn btn-"+color+" collapsed");
     headingThree.setAttribute("class","card-header bg-"+color+"");
     acordeonBtn3.setAttribute("class","btn btn-"+color+" collapsed");
+
+
+    var formularioRegvarvar = document.getElementById("formularioRegvar");
+    if (isInPage(formularioRegvarvar)) {
+        let textRegistroBigvar = document.getElementById("textRegistroBig");
+        if (isInPage(textRegistroBigvar)) {
+            if (color.localeCompare("dark")==0) {
+                textRegistroBig.setAttribute("class","d-none d-sm-block display-1 text-white text-center my-4");
+            }else{
+            textRegistroBig.setAttribute("class","d-none d-sm-block display-1 text-"+color+" text-center my-4");
+            }
+        }else{
+            if (color.localeCompare("dark")==0) {
+                textRegistroSmall.setAttribute("class","d-block d-sm-none display-3 text-white text-center my-4");
+            }else{
+                textRegistroSmall.setAttribute("class","d-block d-sm-none display-3 text-"+color+" text-center my-4");
+            }
+            
+        }
+        
+        if (color.localeCompare("dark")==0) {
+            inputusername.setAttribute("class","form-control border-light");
+            inputpassword.setAttribute("class","form-control border-light");
+            inputnombre.setAttribute("class","form-control border-light");
+            inputapellido.setAttribute("class","form-control border-light");
+            inputemail.setAttribute("class","form-control border-light");
+            btnregNewUser.setAttribute("class","btn btn-lg btn-block text-white bg-dark border-white");
+        }else{
+            inputusername.setAttribute("class","form-control border-"+color);
+            inputpassword.setAttribute("class","form-control border-"+color);
+            inputnombre.setAttribute("class","form-control border-"+color);
+            inputapellido.setAttribute("class","form-control border-"+color);
+            inputemail.setAttribute("class","form-control border-"+color);
+            btnregNewUser.setAttribute("class","btn btn-lg btn-block text-white bg-"+color+" border-white");
+        }
+      
+    }
+
 
 }
 
@@ -361,12 +417,38 @@ function conservartema(){
     setTimeout ('cambiartema(colorHidden);', 150); 
 }
 
+function conservartema2(){
+
+    colorHidden = elementohidden2.getAttribute("class");
+
+    if(colorHidden.localeCompare("warning")==0){
+        colorHidden="dropdowncolor1";
+    }
+    if(colorHidden.localeCompare("danger")==0){
+        colorHidden="dropdowncolor2";
+    }
+    if(colorHidden.localeCompare("primary")==0){
+        colorHidden="dropdowncolor3";
+    }
+    if(colorHidden.localeCompare("dark")==0){
+        colorHidden="dropdowncolor4";
+    }
+    
+    setTimeout ('cambiartema(colorHidden);', 1000); 
+}
+
 function isInPage(node) {
     return (node === document.body) ? false : document.body.contains(node);
 }
 
 function actualizarbg(){
     var h = elementohidden.getAttribute("class");
+    var elementonavxl = document.getElementById("navthxl");
+    var elementonavsm = document.getElementById("navthsm");
+    var elementonavmd = document.getElementById("navthmd");
+    var elementonavxs = document.getElementById("navthxs");
+    var elementonavlg = document.getElementById("navthlg");
+    if (isInPage(elementonavxl) || isInPage(elementonavsm) || isInPage(elementonavmd)  || isInPage(elementonavxs)  || isInPage(elementonavlg)) {
     $("#navthxl").addClass(h);
     navthxl.setAttribute("id","navxl");
     $("#navthlg").addClass(h);
@@ -377,13 +459,18 @@ function actualizarbg(){
     navthsm.setAttribute("id","navsm");
     $("#navthxs").addClass(h);
     navthxs.setAttribute("id","navxs");
+    }
 
 }
 
 function restaurarbg(){
     var h = elementohidden.getAttribute("class");
     var elementonavxl = document.getElementById("navxl");
-    if (isInPage(elementonavxl)) {
+    var elementonavsm = document.getElementById("navsm");
+    var elementonavmd = document.getElementById("navmd");
+    var elementonavxs = document.getElementById("navxs");
+    var elementonavlg = document.getElementById("navlg");
+    if (isInPage(elementonavxl) || isInPage(elementonavsm) || isInPage(elementonavmd)  || isInPage(elementonavxs)  || isInPage(elementonavlg)) {
     $("#navxl").removeClass(h);
     navxl.setAttribute("id","navthxl");
     $("#navlg").removeClass(h);
@@ -401,35 +488,42 @@ new WOW().init();
 
 $(window).scroll(function(){
     var h = elementohidden.getAttribute("class");
+    var elementonavxl = document.getElementById("navthxl");
+    var elementonavsm = document.getElementById("navthsm");
+    var elementonavmd = document.getElementById("navthmd");
+    var elementonavxs = document.getElementById("navthxs");
+    var elementonavlg = document.getElementById("navthlg");
+    if (isInPage(elementonavxl) || isInPage(elementonavsm) || isInPage(elementonavmd)  || isInPage(elementonavxs)  || isInPage(elementonavlg)) {
 
-    if ($("#navthxl").offset().top > 800) {
-        $("#navthxl").addClass(h);
-    } else {
-        $("#navthxl").removeClass(h);
-    }
+        if ($("#navthxl").offset().top > 800) {
+            $("#navthxl").addClass(h);
+        } else {
+            $("#navthxl").removeClass(h);
+        }
 
-    if ($("#navthlg").offset().top > 450) {
-        $("#navthlg").addClass(h);
-    } else {
-        $("#navthlg").removeClass(h);
-    }
+        if ($("#navthlg").offset().top > 450) {
+            $("#navthlg").addClass(h);
+        } else {
+            $("#navthlg").removeClass(h);
+        }
 
-    if ($("#navthmd").offset().top > 300) {
-        $("#navthmd").addClass(h);
-    } else {
-        $("#navthmd").removeClass(h);
-    }
+        if ($("#navthmd").offset().top > 300) {
+            $("#navthmd").addClass(h);
+        } else {
+            $("#navthmd").removeClass(h);
+        }
 
-    if ($("#navthsm").offset().top > 800) {
-        $("#navthsm").addClass(h);
-    } else {
-        $("#navthsm").removeClass(h);
-    }
+        if ($("#navthsm").offset().top > 800) {
+            $("#navthsm").addClass(h);
+        } else {
+            $("#navthsm").removeClass(h);
+        }
 
-    if ($("#navthxs").offset().top > 500) {
-        $("#navthxs").addClass(h);
-    } else {
-        $("#navthxs").removeClass(h);
+        if ($("#navthxs").offset().top > 500) {
+            $("#navthxs").addClass(h);
+        } else {
+            $("#navthxs").removeClass(h);
+        }
     }
 });
 

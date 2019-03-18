@@ -3,6 +3,7 @@ import { UsuariosService } from '../../usuarios/usuarios.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Usuario } from 'src/app/usuarios/usuario';
+import { AuthService } from 'src/app/usuarios/auth.service';
 
 @Component({
   selector: 'app-registro',
@@ -14,24 +15,30 @@ export class RegistroComponent implements OnInit {
   private errores: string[];
   private usuario: Usuario = new Usuario();
 
-
-  constructor(//private usuarioService:UsuariosService,
+  constructor(private usuarioService:UsuariosService,
               private router:Router,
-              private activateRoute: ActivatedRoute
+              private activateRoute: ActivatedRoute,
+              private authService:AuthService
               ) {  } 
               
 
   ngOnInit() {
+   
   }
 
+ 
+  
+
   create(): void{
-    //this.usuario.roles = ['ROLE_USER'],['ROLE_ADMIN'];
-    console.log(this.usuario);
-    /*
+    //this.usuario.roles = [{"nombre": "ROLE_USER" },{"nombre": "ROLE_ADMIN" }];
+    
+    //console.log(this.usuario);
+    
     this.usuarioService.create(this.usuario)
     .subscribe( usuario => {
+      Swal.fire({title: 'Cliente Usuario',text: `El Usuario se registro correctamente`,type: 'success',confirmButtonText: 'Aceptar' });
       this.router.navigate(['/login']);
-      Swal.fire({title: 'Cliente Usuario',text: `El Usuario ${usuario.nombre} se registro correctamente`,type: 'success',confirmButtonText: 'Aceptar' });
+      
     },
     err => {
       this.errores = err.error.errors as string[];
@@ -39,8 +46,9 @@ export class RegistroComponent implements OnInit {
       console.error(err.error.errors);
     }
     );
-    */
     
+    let usuarioVacio = new Usuario();
+    this.usuario = usuarioVacio;
   }
 
 }

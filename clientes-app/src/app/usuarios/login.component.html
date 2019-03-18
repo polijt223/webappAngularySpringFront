@@ -6,7 +6,7 @@
   <div class="row">
   <div class="d-none d-md-block col-md-3"></div>
 
-  <div id="cardFormLogin" class="col-12 col-md-6 card bg-dark text-white border-success ">
+  <div id="cardFormLogin" class="col-12 col-md-6 card bg-dark text-white border-light ">
     <div class="card-header">{{titulo}}</div>
     <div class="card-body">
 
@@ -29,7 +29,7 @@
 
         <div class="form-group row">
           <div class="col-sm-12">
-            <button id="btnFormLogin" role="button"  onclick="conservartema(),restaurarbg()" class="btn btn-lg btn-block text-white bg-dark border-success" (click)="login()" >Ingresar</button>
+            <button id="btnFormLogin" role="button" (click)="login()"   onclick="restaurarbg(),conservartema2()"  class="btn btn-lg btn-block text-white bg-dark border-light" >Ingresar</button>
           </div>
         </div>
       </form>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Client} from '@stomp/stompjs';
 import * as SockJS from 'sockjs-client';
 import { Mensaje } from './models/mensaje';
+import { AuthService } from '../usuarios/auth.service';
 
 @Component({
   selector: 'app-chat',
@@ -17,11 +18,10 @@ export class ChatComponent implements OnInit {
   mensajes: Mensaje[] = [];
   escribiendo: string;
 
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit() {
     this.client = new Client();
-
     this.client.webSocketFactory = () => {
       return new SockJS("http://localhost:7075/chat-websocket");
     }

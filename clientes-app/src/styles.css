@@ -1,89 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
-
-.hbuttonWarning:hover {
-    background-color: #ffe601;
-    color: black;
-  }
-.hbuttonDanger:hover {
-  background-color: #f10808;
-  color: white;
-}
-.hbuttonPrimary:hover {
-  background-color: #0463f1;
-  color: white;
-}
-.hbuttonDark:hover {
-  background-color: #000000;
-  color: white;
-}
-
-#dropdowncolor1:hover{background-color: #ffe601; color: black;}
-#dropdowncolor2:hover{background-color: #f10808; color: white;}
-#dropdowncolor3:hover{background-color: #0463f1; color: white;}
-#dropdowncolor4:hover{background-color: #000000; color: white;}
-
-#blocktext{
-  background-color:rgba(97, 97, 97, 0.452);
-  margin-bottom: 10%;
-}
-#blocktexttopmd{
-  background-color:rgba(97, 97, 97, 0.452);
-  color:#ffffff;
-  width: 70%; 
-  margin-top: 150px;
-  margin-left: 15%;
-  padding: 10px;
-  position: absolute;
-  z-index: 1000;
-}
-#blocktexttopxs{
-  background-color:rgba(97, 97, 97, 0.452);
-  color:#ffffff;
-  width: 70%; 
-  margin-top: 70%;
-  margin-left: 15%;
-  padding: 10px;
-  position: absolute;
-  z-index: 1000;
-}
-#blocktexttopsm{
-  background-color:rgba(97, 97, 97, 0.452);
-  color:#ffffff;
-  width: 70%; 
-  margin-top: 70%;
-  margin-left: 15%;
-  padding: 10px;
-  position: absolute;
-  z-index: 1000;
-}
-#blocktexttoplg{
-  background-color:rgba(97, 97, 97, 0.452);
-  margin-bottom: 10%;
-  color:#ffffff;
-  width: 50%; 
-  margin-top: 250px;
-  margin-left: 25%;
-  padding: 20px;
-  position: absolute;
-  z-index: 1000;
-}
-#blocktexttopxl{
-  background-color:rgba(97, 97, 97, 0.452);
-  margin-bottom: 10%;
-  color:#ffffff;
-  width: 50%; 
-  margin-top: 250px;
-  margin-left: 25%;
-  padding: 20px;
-  position: absolute;
-  z-index: 1000;
-}
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .swiper-container1 {
 width: 100%;
@@ -101,6 +17,3 @@ height: 400px;
   height: 300px;
 }
 
-.nav-transition-color{
-  transition: all 0.5s ease;
-}

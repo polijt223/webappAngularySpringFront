@@ -1,0 +1,57 @@
+#blocktexttopmd{
+  text-align: center;
+    background-color:rgba(97, 97, 97, 0.452);
+    color:#ffffff;
+    width: 70%; 
+    margin-top: 150px;
+    margin-left: 15%;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+  }
+  #blocktexttopxs{
+    text-align: center;
+    background-color:rgba(97, 97, 97, 0.452);
+    color:#ffffff;
+    width: 70%; 
+    margin-top: 70%;
+    margin-left: 15%;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+  }
+  #blocktexttopsm{
+    text-align: center;
+    background-color:rgba(97, 97, 97, 0.452);
+    color:#ffffff;
+    width: 70%; 
+    margin-top: 70%;
+    margin-left: 15%;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+  }
+  #blocktexttoplg{
+    text-align: center;
+    background-color:rgba(97, 97, 97, 0.452);
+    margin-bottom: 10%;
+    color:#ffffff;
+    width: 60%; 
+    margin-top: 250px;
+    margin-left: 20%;
+    padding: 20px;
+    position: absolute;
+    z-index: 1000;
+  }
+  #blocktexttopxl{
+    text-align: center;
+    background-color:rgba(97, 97, 97, 0.452);
+    margin-bottom: 10%;
+    color:#ffffff;
+    width: 60%; 
+    margin-top: 20%;
+    margin-left: 20%;
+    padding: 20px;
+    position: absolute;
+    z-index: 1000;
+  }
