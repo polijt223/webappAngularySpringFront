@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { HttpEventType } from '@angular/common/http';
 import {ModalService} from './modal.service';
 import { AuthService } from 'src/app/usuarios/auth.service';
+import {URL_BACKEND} from '../../config/config';
 
 @Component({
   selector: 'detalle-cliente',
@@ -19,12 +20,15 @@ export class DetalleComponent implements OnInit {
   private fotoSeleccionada:File;
   progreso: number = 0;
   modalServiceH: ModalService;
+  private authServiceH:AuthService;
+  urlBackEnd: string = URL_BACKEND;
 
   constructor(private clienteService:ClienteService, 
               //private activatedRoute: ActivatedRoute
               private modalService: ModalService,
-              private authService: AuthService ) { 
-
+              private authService: AuthService )
+               { 
+                this.authServiceH = this.authService;
                 this.modalServiceH = this.modalService;
 
               }

@@ -3,6 +3,7 @@ import {Client} from '@stomp/stompjs';
 import * as SockJS from 'sockjs-client';
 import { Mensaje } from './models/mensaje';
 import { AuthService } from '../usuarios/auth.service';
+import {URL_BACKEND} from '../config/config';
 
 @Component({
   selector: 'app-chat',
@@ -26,7 +27,7 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
     this.client = new Client();
     this.client.webSocketFactory = () => {
-      return new SockJS("http://localhost:7075/chat-websocket");
+      return new SockJS(URL_BACKEND+"/chat-websocket");
     }
 
     this.client.onConnect = (frame) =>{
