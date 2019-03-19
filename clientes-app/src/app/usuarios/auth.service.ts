@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from './usuario';
+import {URL_BACKEND} from '../config/config';
 
 @Injectable({
   providedIn: 'root'
@@ -83,7 +84,8 @@ export class AuthService {
 
 
   login(usuario:Usuario): Observable<any> {
-    const urlEndpoint = 'http://localhost:7075/oauth/token';          //constantes son aquellas a las que se les asigna un valor que 
+    const urlEndpoint = URL_BACKEND + '/oauth/token';
+    //const urlEndpoint = 'http://localhost:7075/oauth/token';          //constantes son aquellas a las que se les asigna un valor que 
     const credenciales = btoa('angularapp' + ':' + 'root');           //ya no se modifica el valor en el trascurso del programa.
     const httpHeaders = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded',
     'Authorization': 'Basic ' + credenciales });

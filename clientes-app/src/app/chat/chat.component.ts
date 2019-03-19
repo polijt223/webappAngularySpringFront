@@ -17,8 +17,11 @@ export class ChatComponent implements OnInit {
   mensaje: Mensaje = new Mensaje();
   mensajes: Mensaje[] = [];
   escribiendo: string;
+  authServiceH:AuthService;
 
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService) { 
+    this.authServiceH = this.authService;
+  }
 
   ngOnInit() {
     this.client = new Client();

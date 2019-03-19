@@ -11,11 +11,13 @@ import {Router} from '@angular/router';
 import {formatDate, DatePipe} from '@angular/common';
 //import localeEsAr from '@angular/common/locales/es-AR';
 import {AuthService} from '../usuarios/auth.service';
+import {URL_BACKEND} from '../config/config';
 
 @Injectable()
 export class ClienteService {
 
-  private urlEndPoint: string = 'http://localhost:7075/api/clientes';
+  private urlEndPoint: string = URL_BACKEND + '/api/clientes';
+  //private urlEndPoint: string = 'http://localhost:7075/api/clientes';
   private httpHeaders = new HttpHeaders({'Content-Type':'application/json'});
 
   //AGREGAR EL ATRIBUTO EN EL CONTRUCTOR ES PARA INYECTARLO DE MANERA GLOBAL DE MANERA RAPIDA Y PROLIJA 

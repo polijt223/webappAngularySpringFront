@@ -12,12 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class FormComponent implements OnInit {
 
-  private cliente:Cliente = new Cliente();
+  cliente:Cliente = new Cliente();
+  titulo:string = "";
 
   constructor(private clienteService: ClienteService,
   private router:Router,
   private activateRoute: ActivatedRoute) { }
-  private errores: string[];
+  errores: string[];
   regiones: Region[];
 
   ngOnInit() {

@@ -9,17 +9,18 @@ import Swal from 'sweetalert2';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  authServiceH: AuthService;
 
   constructor(private authService: AuthService, private router :Router) {
-
+    this.authServiceH = this.authService;
    }
 
   ngOnInit() {
   }
 
   logout():void{
-    let username = this.authService.usuario.username;
-    this.authService.logout();
+    let username = this.authServiceH.usuario.username;
+    this.authServiceH.logout();
     this.router.navigate(["/home"]);
     Swal.fire({ title: "Cerro Session", text: `Acaba de cerrar sesión correctamente ${username}`, type: 'success', confirmButtonText: 'Aceptar'});
     

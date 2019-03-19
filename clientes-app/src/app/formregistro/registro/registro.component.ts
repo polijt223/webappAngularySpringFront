@@ -14,12 +14,15 @@ export class RegistroComponent implements OnInit {
 
   private errores: string[];
   private usuario: Usuario = new Usuario();
+  authServiceH:AuthService;
 
   constructor(private usuarioService:UsuariosService,
               private router:Router,
               private activateRoute: ActivatedRoute,
               private authService:AuthService
-              ) {  } 
+              ) {  
+                this.authServiceH = this.authService;
+              } 
               
 
   ngOnInit() {

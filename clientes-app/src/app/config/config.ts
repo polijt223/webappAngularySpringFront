@@ -1,0 +1,1 @@
+export const URL_BACKEND = 'http://springboot2-rest-chat-backend.herokuapp.com/'
