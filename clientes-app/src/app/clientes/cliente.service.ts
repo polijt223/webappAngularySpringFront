@@ -13,6 +13,7 @@ import {formatDate, DatePipe} from '@angular/common';
 import {AuthService} from '../usuarios/auth.service';
 import {URL_BACKEND} from '../config/config';
 
+
 @Injectable()
 export class ClienteService {
 
@@ -24,7 +25,8 @@ export class ClienteService {
   constructor(
               private http: HttpClient,
               private router:Router,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              ) { }
 
   private isNoAutorizado(e):boolean{
     if (e.status==401) {  //Error 401 quiere decir que no pueder acceder al recurso no tienes credenciales no existe no disponible
@@ -160,6 +162,10 @@ export class ClienteService {
   }
 
   subirFoto(archivo:File,id): Observable<HttpEvent<{}>>{
+    
+    
+    
+    
     let formData = new FormData();
     formData.append("archivo",archivo);
     formData.append("id",id);

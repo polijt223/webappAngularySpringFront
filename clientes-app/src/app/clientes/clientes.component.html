@@ -31,10 +31,12 @@
         <tbody id="tbodyListaUsuariosDatos" class="bg-white text-dark">
           <tr *ngFor="let cliente of clientes">
             <td *ngIf="authServiceH.hasRole('ROLE_USER')">
+                
                 <img *ngIf="cliente?.foto" (click)="abrirModal(cliente)" src="{{urlBackEnd}}/api/uploads/img/{{cliente.foto}}"
                  style="width: 100px; height:64px; cursor: pointer;"  alt="{{cliente.foto}}" class="img-thumbnail rounded">
                 <img *ngIf="!cliente?.foto" (click)="abrirModal(cliente)" src="{{urlBackEnd}}/images/no-user.png"
                 style="width: 100px; height:64px; cursor: pointer;"  alt="{{cliente.foto}}" class="img-thumbnail rounded">
+                
             </td>
             <td>{{ cliente.nombre }}</td>
             <td>{{ cliente.apellido | uppercase }}</td>
