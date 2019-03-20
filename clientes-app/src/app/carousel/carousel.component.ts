@@ -13,10 +13,11 @@ export class CarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    /*
     window.onload = function (){
       setTimeout (console.clear, 500); 
     }
-    
+    */
   }
 
 }

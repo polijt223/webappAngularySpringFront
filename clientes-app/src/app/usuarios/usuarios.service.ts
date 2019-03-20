@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import {Router} from '@angular/router';
 import { AuthService } from './auth.service';
 import { Usuario } from './usuario';
+import { URL_BACKEND } from '../config/config';
 
 
 @Injectable({
@@ -15,7 +16,8 @@ import { Usuario } from './usuario';
 
 export class UsuariosService {
 
-  private urlEndPoint: string = 'http://localhost:7075/user/usuarios';
+  private urlEndPoint: string = URL_BACKEND+'/user/usuarios';
+  //private urlEndPoint: string = 'http://localhost:7075/user/usuarios';
   private httpHeaders = new HttpHeaders({'Content-Type':'application/json'});
 
   constructor(private http: HttpClient,

@@ -1,6 +1,6 @@
 import {Region} from './region';
 
-export class Cliente {
+export class ObjCliente {
   id: number;
   nombre: string;
   apellido:string;

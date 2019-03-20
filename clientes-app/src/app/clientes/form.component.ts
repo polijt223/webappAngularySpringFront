@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from './Cliente';
+import { ObjCliente } from './objcliente';
 import { Region } from './Region';
 import { ClienteService } from './cliente.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class FormComponent implements OnInit {
 
-  cliente:Cliente = new Cliente();
+  cliente:ObjCliente = new ObjCliente();
   titulo:string = "";
 
   constructor(private clienteService: ClienteService,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from './cliente';
+import { ObjCliente } from './objcliente';
 import { ClienteService } from './cliente.service';
 import Swal from 'sweetalert2';
 import {tap} from 'rxjs/operators';
@@ -14,11 +14,11 @@ import { URL_BACKEND } from '../config/config';
 })
 export class ClientesComponent implements OnInit {
 
-  clientes: Cliente[];
-  clienteId:Cliente ;
+  clientes: ObjCliente[];
+  clienteId:ObjCliente ;
   paginador:any;
-  clienteSeleccionado: Cliente ;
-  urlBackEnd: string = URL_BACKEND;
+  clienteSeleccionado: ObjCliente ;
+  urlBackEnd:string = URL_BACKEND;
   authServiceH: AuthService;
   
   constructor(private clienteService: ClienteService,
@@ -31,10 +31,11 @@ export class ClientesComponent implements OnInit {
               }
 
   ngOnInit() {
+    /*
     window.onload = function (){
       setTimeout (console.clear, 500); 
     }
-    
+    */
       this.activatedRoute.paramMap.subscribe( params => {
         let page:number = +params.get('page');
 
@@ -51,7 +52,7 @@ export class ClientesComponent implements OnInit {
             );
           })  */   //Uso de tap, innesesario en este ejemplo 
         ).subscribe(response => {
-          this.clientes = response.content as Cliente[];
+          this.clientes = response.content as ObjCliente[];
           this.paginador = response;
         });
 
@@ -74,7 +75,7 @@ export class ClientesComponent implements OnInit {
     );
   }
 
-  delete(cliente: Cliente): void{
+  delete(cliente: ObjCliente): void{
 
     const swalWithBootstrapButtons = Swal.mixin({
     confirmButtonClass: 'btn btn-success',
@@ -107,7 +108,7 @@ export class ClientesComponent implements OnInit {
     //Fin sweetalert2
   }//fin method delete
 
-  abrirModal(cliente: Cliente){
+  abrirModal(cliente: ObjCliente){
     this.clienteSeleccionado = cliente;
     this.modalService.abrirModal();
   }

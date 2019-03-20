@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Cliente} from '../cliente';
+import {ObjCliente} from '../objcliente';
 import {ClienteService} from '../cliente.service';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -15,12 +15,12 @@ import {URL_BACKEND} from '../../config/config';
 })
 export class DetalleComponent implements OnInit {
 
-  @Input() cliente: Cliente;
+  @Input() cliente: ObjCliente;
   titulo: String = "Detalle del Cliente";
-  private fotoSeleccionada:File;
+  fotoSeleccionada:File;
   progreso: number = 0;
   modalServiceH: ModalService;
-  private authServiceH:AuthService;
+  authServiceH:AuthService;
   urlBackEnd: string = URL_BACKEND;
 
   constructor(private clienteService:ClienteService, 
@@ -52,6 +52,8 @@ export class DetalleComponent implements OnInit {
       this.fotoSeleccionada = event.target.files[0];
       this.progreso = 0;
       console.log(this.fotoSeleccionada);
+      console.log(this.cliente.id);
+      console.log(this.cliente);
       if (this.fotoSeleccionada.type.indexOf('image')<0) {
         Swal.fire({title: 'Error Al Seleccionar Imagen:',text: "El archivo debe ser del tipo imagen",type: 'error',confirmButtonText: 'Aceptar'});
       }
@@ -67,7 +69,7 @@ export class DetalleComponent implements OnInit {
             this.progreso = Math.round((event.loaded/event.total)*100);
           }else if(event.type === HttpEventType.Response){
             let response : any = event.body;
-            this.cliente = response.cliente as Cliente;
+            this.cliente = response.cliente as ObjCliente;
             this.modalService.notificarUpload.emit(this.cliente);
             Swal.fire({title: 'La Foto se ha subido completamente!',text: response.mensaje , type: 'success',confirmButtonText: 'Aceptar'});
           }

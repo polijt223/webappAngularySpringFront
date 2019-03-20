@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //import { CLIENTES } from './clientes.json';
-import { Cliente } from './cliente';
+import { ObjCliente } from './objcliente';
 import { Region } from './region';
 import { of,Observable,throwError } from 'rxjs';
 //import { of } from 'rxjs';
@@ -62,7 +62,7 @@ export class ClienteService {
     
     return this.http.get(this.urlEndPoint + '/page/' + page).pipe(
       map((response: any) => {
-          (response.content as Cliente[]).map(cliente => {
+          (response.content as ObjCliente[]).map(cliente => {
           cliente.nombre = cliente.nombre.toUpperCase();
           
           let pipedate = new DatePipe("es");
@@ -78,9 +78,9 @@ export class ClienteService {
       
   }
 
-  create(cliente: Cliente) : Observable<Cliente>{
+  create(cliente: ObjCliente) : Observable<ObjCliente>{
     return this.http.post(this.urlEndPoint,cliente,{headers: this.agregarAuthorizationHeader()}).pipe(    // pasamos el metodo agregarAuthorizationHeader para que la cabesera pasada tenga la autorizacion tambien
-      map((response:any) => response.cliente as Cliente),
+      map((response:any) => response.cliente as ObjCliente),
       catchError(e => {
 
         if (this.isNoAutorizado(e)) {
@@ -98,9 +98,9 @@ export class ClienteService {
     );
   }
 
-  getCliente(id) : Observable<Cliente>{
+  getCliente(id) : Observable<ObjCliente>{
 
-    return this.http.get<Cliente>(`${this.urlEndPoint}/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+    return this.http.get<ObjCliente>(`${this.urlEndPoint}/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
       catchError(e => {
         if (this.isNoAutorizado(e)) {
           return throwError(e);
@@ -114,7 +114,7 @@ export class ClienteService {
     );
   }
 
-  update(cliente:Cliente): Observable<any>{
+  update(cliente:ObjCliente): Observable<any>{
     return this.http.put<any>(`${this.urlEndPoint}/${cliente.id}`,cliente,{headers: this.agregarAuthorizationHeader()}).pipe(
       catchError(e => {
 
@@ -139,8 +139,8 @@ export class ClienteService {
     );
   }
 
-  delete(id: number): Observable<Cliente>{
-    return this.http.delete<Cliente>(`${this.urlEndPoint}/${id}`,{headers: this.agregarAuthorizationHeader()}).pipe(
+  delete(id: number): Observable<ObjCliente>{
+    return this.http.delete<ObjCliente>(`${this.urlEndPoint}/${id}`,{headers: this.agregarAuthorizationHeader()}).pipe(
       catchError(e => {
 
         if (this.isNoAutorizado(e)) {
