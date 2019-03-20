@@ -518,12 +518,17 @@ $(window).scroll(function(){
 
 setTimeout(()=>{
     var URLactual = window.location.href;
+    if (URLactual.localeCompare("https://springboot2-rest-chat-backend.herokuapp.com/clientes")==0 || URLactual.localeCompare("https://springboot2-rest-chat-backend.herokuapp.com/login")==0 ) {
+        actualizarbg();
+    }
     if (URLactual.localeCompare("http://localhost:4200/clientes")==0 || URLactual.localeCompare("http://localhost:4200/login")==0 ) {
         actualizarbg();
     }
 
 },"1000");
-    
+
+
+
 
 
 
