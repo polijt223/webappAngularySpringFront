@@ -176,18 +176,9 @@ function cambiartema(texto){
 
     var card1Prueba = document.getElementById("card1h");
     if (isInPage(card1Prueba)) {
-        card1h.setAttribute("onmouseover","maszoom(card1h)");
-        card1h.setAttribute("onmouseout","menoszoom(card1h)");
-        card1h.setAttribute("class","card  border border-"+color+"");
-        cardTitle1.setAttribute("class","card-title text-"+color+"");
-        card2h.setAttribute("onmouseover","maszoom(card2h)");
-        card2h.setAttribute("onmouseout","menoszoom(card2h)");
-        card2h.setAttribute("class","card  border border-"+color+"");
-        cardTitle2.setAttribute("class","card-title text-"+color+"");
-        card3h.setAttribute("onmouseover","maszoom(card3h)");
-        card3h.setAttribute("onmouseout","menoszoom(card3h)");
-        card3h.setAttribute("class","card  border border-"+color+"");
-        cardTitle3.setAttribute("class","card-title text-"+color+"");
+        card1h.setAttribute("class","hcard"+colorC+" card  border border-"+color+" animated flipInY delay-0-5s");
+        card2h.setAttribute("class","hcard"+colorC+" card  border border-"+color+" animated flipInY delay-1s");
+        card3h.setAttribute("class","hcard"+colorC+" card  border border-"+color+" animated flipInY delay-1-5s ");
     }
 
     var cardchatvar = document.getElementById("cardchat");
@@ -331,6 +322,9 @@ function cambiartema(texto){
     bt3h.setAttribute("class","hbutton"+colorC+" list-group-item list-group-item-action ");
     bt2h.setAttribute("class","hbutton"+colorC+" list-group-item list-group-item-action ");
     bt1h.setAttribute("class","hbutton"+colorC+" list-group-item list-group-item-action ");
+
+   
+
 
     footer.setAttribute("class","py-1 bg-"+color+" text-light rounded-top");
     btnfooter.setAttribute("class","btn btn-outline-light btn-lg ");
@@ -483,7 +477,7 @@ $(window).scroll(function(){
     var elementonavlg = document.getElementById("navthlg");
     if (isInPage(elementonavxl) || isInPage(elementonavsm) || isInPage(elementonavmd)  || isInPage(elementonavxs)  || isInPage(elementonavlg)) {
 
-        if ($("#navthxl").offset().top > 800) {
+        if ($("#navthxl").offset().top > 400) {
             $("#navthxl").addClass(h);
         } else {
             $("#navthxl").removeClass(h);
@@ -501,13 +495,13 @@ $(window).scroll(function(){
             $("#navthmd").removeClass(h);
         }
 
-        if ($("#navthsm").offset().top > 800) {
+        if ($("#navthsm").offset().top > 600) {
             $("#navthsm").addClass(h);
         } else {
             $("#navthsm").removeClass(h);
         }
 
-        if ($("#navthxs").offset().top > 500) {
+        if ($("#navthxs").offset().top > 400) {
             $("#navthxs").addClass(h);
         } else {
             $("#navthxs").removeClass(h);
@@ -518,10 +512,10 @@ $(window).scroll(function(){
 
 setTimeout(()=>{
     var URLactual = window.location.href;
-    if (URLactual.localeCompare("https://springboot2-rest-chat-backend.herokuapp.com/clientes")==0 || URLactual.localeCompare("https://springboot2-rest-chat-backend.herokuapp.com/login")==0 ) {
+    if (URLactual.localeCompare("https://springboot2-rest-chat-backend.herokuapp.com/clientes")==0 || URLactual.localeCompare("https://springboot2-rest-chat-backend.herokuapp.com/login")==0 || URLactual.localeCompare("https://springboot2-rest-chat-backend.herokuapp.com/contacto")==0) {
         actualizarbg();
     }
-    if (URLactual.localeCompare("http://localhost:4200/clientes")==0 || URLactual.localeCompare("http://localhost:4200/login")==0 ) {
+    if (URLactual.localeCompare("http://localhost:4200/clientes")==0 || URLactual.localeCompare("http://localhost:4200/login")==0 || URLactual.localeCompare("http://localhost:4200/contacto")==0 ) {
         actualizarbg();
     }
 
@@ -531,5 +525,166 @@ setTimeout(()=>{
 
 
 
+var efecto = true;
+function activarefecto(){
+    if (efecto) {
+        $("#textoefectoP").removeClass("animated fadeInLeft");
+        efecto = false;
+        $("#textoefectoP").addClass("animated fadeOutLeft");
+    }else{
+        $("#textoefectoP").removeClass("animated fadeOutLeft");
+        efecto = true;
+        $("#textoefectoP").addClass("animated fadeInLeft");
+    }
+}
 
 
+function esVisible(elem){
+    /* Ventana de Visualización*/
+    var posTopView = $(window).scrollTop();
+    var posButView = posTopView + $(window).height();
+    /* Elemento a validar*/
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+    /* Comparamos los dos valores tanto del elemento como de la ventana*/
+    return ((elemBottom < posButView && elemBottom > posTopView) || (elemTop >posTopView && elemTop< posButView));
+}
+
+
+$(window).scroll(function(){
+
+    var elementS = null;
+
+    //CARD ANIMATE
+    elementS = document.getElementById('card1h');
+    if (isInPage(elementS)) {
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated flipInY delay-0-5s");
+        } else {
+            $(elementS).removeClass("animated flipInY delay-0-5s");
+        }
+    
+        elementS = document.getElementById('card2h');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated flipInY delay-1s");
+        } else {
+            $(elementS).removeClass("animated flipInY delay-1s");
+        }
+    
+        elementS = document.getElementById('card3h');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated flipInY delay-1-5s");
+        } else {
+            $(elementS).removeClass("animated flipInY delay-1-5s");
+        }
+    }
+
+    //Title caroucel Animate
+    elementS = document.getElementById('blocktexttopxl');
+    if (isInPage(elementS)) {
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated lightSpeedIn delay-0-5s");
+        } else {
+            $(elementS).removeClass("animated lightSpeedIn delay-0-5s");
+        }
+    
+        elementS = document.getElementById('blocktexttoplg');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated lightSpeedIn delay-0-5s");
+        } else {
+            $(elementS).removeClass("animated lightSpeedIn delay-0-5s");
+        }
+    
+        elementS = document.getElementById('blocktexttopmd');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated lightSpeedIn delay-0-5s");
+        } else {
+            $(elementS).removeClass("animated lightSpeedIn delay-0-5s");
+        }
+    
+        elementS = document.getElementById('blocktexttopsm');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated lightSpeedIn delay-0-5s");
+        } else {
+            $(elementS).removeClass("animated lightSpeedIn delay-0-5s");
+        }
+    
+        elementS = document.getElementById('blocktexttopxs');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated lightSpeedIn delay-0-5s");
+        } else {
+            $(elementS).removeClass("animated lightSpeedIn delay-0-5s");
+        }
+    
+    }
+    
+    //IMAGEN THE WITCHER 3 WILL HUNT  ANIMATE
+    elementS = document.getElementById('imgThw3Title');
+    if (isInPage(elementS)) {
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated zoomIn");
+        } else {
+            $(elementS).removeClass("animated zoomIn");
+        } 
+    } 
+
+    //Registro ANIMATE
+    elementS = document.getElementById('textRegistroBig');
+    if (isInPage(elementS)) {
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated slideInLeft delay-0-4s");
+        } else {
+            $(elementS).removeClass("animated slideInLeft delay-0-4s");
+        }
+    
+        elementS = document.getElementById('textRegistroSmall');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated slideInLeft delay-0-4s");
+        } else {
+            $(elementS).removeClass("animated slideInLeft delay-0-4s");
+        }
+    
+        elementS = document.getElementById('divinputusername');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated slideInLeft delay-0-4s");
+        } else {
+            $(elementS).removeClass("animated slideInLeft delay-0-4s");
+        }
+    
+        elementS = document.getElementById('divinputpassword');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated slideInLeft delay-0-4s");
+        } else {
+            $(elementS).removeClass("animated slideInLeft delay-0-4s");
+        }
+    
+        elementS = document.getElementById('divinputnombre');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated slideInLeft delay-0-4s");
+        } else {
+            $(elementS).removeClass("animated slideInLeft delay-0-4s");
+        }
+    
+        elementS = document.getElementById('divinputapellido');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated slideInLeft delay-0-4s");
+        } else {
+            $(elementS).removeClass("animated slideInLeft delay-0-4s");
+        }
+    
+        elementS = document.getElementById('divinputemail');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated slideInLeft delay-0-4s");
+        } else {
+            $(elementS).removeClass("animated slideInLeft delay-0-4s");
+        }
+    
+        elementS = document.getElementById('divbtnregNewUser');
+        if (esVisible(elementS)) {
+            $(elementS).addClass("animated slideInLeft delay-0-4s");
+        } else {
+            $(elementS).removeClass("animated slideInLeft delay-0-4s");
+        }
+    }
+    
+});

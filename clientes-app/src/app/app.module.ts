@@ -25,6 +25,8 @@ import { DetalleComponent } from './clientes/detalle/detalle.component';
 import { LoginComponent } from './usuarios/login.component';
 import { ChatComponent } from './chat/chat.component';
 import { RegistroComponent} from './formregistro/registro/registro.component';
+import { ContactoComponent } from './contacto/contacto.component';
+
 
 registerLocaleData(localeEsAr, 'es');
 
@@ -36,6 +38,7 @@ const routes: Routes =  [
   {path:'clientes/form/:id', component:FormComponent},
   {path:'home', component:CarouselComponent},
   {path:'login', component:LoginComponent},
+  {path:'contacto', component:ContactoComponent},
 ]
 
 @NgModule({
@@ -53,7 +56,8 @@ const routes: Routes =  [
     DetalleComponent,
     LoginComponent,
     ChatComponent,
-    RegistroComponent
+    RegistroComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

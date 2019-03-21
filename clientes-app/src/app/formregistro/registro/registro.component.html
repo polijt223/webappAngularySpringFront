@@ -1,58 +1,52 @@
-<div class="container my-5">
-  <div class="row">
-    <div class="col-12 text-center">
-      <img src="../../../assets/imagenes/logo.png"  class="img-fluid " alt="">
-    </div>
-  </div>
-</div>
+
 
 
 <div *ngIf="!authServiceH.isAuthenticated()" id="formularioRegvar" class="container " style="margin-bottom:200px">
   <div class="row">
     <div class="d-none d-md-block col-md-2"></div>
     <div class="col-12 col-md-8">
-        <div id="textRegistroBig" class="d-none d-sm-block display-1 text-white text-center my-4">Registrate!</div>
-        <div id="textRegistroSmall" class="d-block d-sm-none display-3 text-white text-center my-4">Registrate!</div>
+        <div id="textRegistroBig" class="d-none d-sm-block display-1 text-white text-center my-4 animated slideInLeft delay-0-4s">Registrate!</div>
+        <div id="textRegistroSmall" class="d-block d-sm-none display-3 text-white text-center my-4 animated slideInLeft delay-0-4s">Registrate!</div>
 
         <div class="form-group row">
 
-          <div class="col-sm-12">
+          <div id="divinputusername" class="col-sm-12 animated slideInLeft delay-0-4s" >
               <input id="inputusername" type="text" [(ngModel)]="usuario.username"  style="height: 50px" placeholder="Ingrese Nombre de usuario" class="form-control border-light" >
             </div>
         </div>
 
-        <div class="form-group row">
+        <div id="divinputpassword" class="form-group row animated slideInLeft delay-0-4s" >
           <div class="col-sm-12">
             <input id="inputpassword" type="password" [(ngModel)]="usuario.password" style="height: 50px" placeholder="Contraseña" class="form-control border-light" >
           </div>
         </div>
 
-        <div class="form-group row">
+        <div id="divinputnombre" class="form-group row animated slideInLeft delay-0-4s">
           <div class="col-sm-12">
             <input id="inputnombre" type="text" [(ngModel)]="usuario.nombre" style="height: 50px" placeholder="Ingrese nombre" class="form-control border-light" >
           </div>
         </div>
 
-        <div class="form-group row">
+        <div id="divinputapellido" class="form-group row animated slideInLeft delay-0-4s" >
           <div class="col-sm-12">
             <input id="inputapellido" type="text" [(ngModel)]="usuario.apellido" style="height: 50px" placeholder="Ingrese apellido" class="form-control border-light" >
           </div>
         </div>
 
-        <div class="form-group row">
+        <div id="divinputemail" class="form-group row animated slideInLeft delay-0-4s" >
           <div class="col-sm-12">
             <input id="inputemail" type="email" [(ngModel)]="usuario.email" style="height: 50px" placeholder="Ingrese E-mail"  class="form-control border-light">
           </div>
         </div>
 
-        <div class="form-group row">
+        <div id="divbtnregNewUser" class="form-group row animated slideInLeft delay-0-4s" >
           <div class="col-sm-12">
             <button id="btnregNewUser" role="button" (click)="create()" class="btn btn-lg btn-block text-white bg-dark border-light">Registrar Cuenta!</button>
           </div>
         </div>
 
     </div>
-    <div class="d-none d-md-block col-md-2"></div>
+    <div class="d-none d-md-block col-md-2 "></div>
   </div>
 </div>
 

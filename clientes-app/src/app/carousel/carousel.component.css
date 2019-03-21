@@ -1,3 +1,5 @@
+
+
 #blocktexttopmd{
   text-align: center;
     background-color:rgba(97, 97, 97, 0.452);
@@ -55,3 +57,124 @@
     position: absolute;
     z-index: 1000;
   }
+
+  .imgbackg1{
+    background-image: url("../../assets/imagenes/tw1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackg2{
+    background-image: url("../../assets/imagenes/tw2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackg3{
+    background-image: url("../../assets/imagenes/tw3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackg4{
+    background-image: url("../../assets/imagenes/tw4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackg5{
+    background-image: url("../../assets/imagenes/tw5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackgcel1{
+    background-image: url("../../assets/imagenes/twcel1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: static;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackgcel2{
+    background-image: url("../../assets/imagenes/twcel2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: static;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackgcel3{
+    background-image: url("../../assets/imagenes/twcel3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: static;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackgcel4{
+    background-image: url("../../assets/imagenes/twcel4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: static;
+    width: 100%;
+    height:600px;
+  }
+
+  .imgbackgcel5{
+    background-image: url("../../assets/imagenes/twcel5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+    position: static;
+    width: 100%;
+    height:600px;
+  }
+  
